@@ -6,6 +6,16 @@ window._ = require('lodash');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+// Bổ sung từ file https://github.com/laravel/ui/blob/3.x/src/Presets/bootstrap-stubs/bootstrap.js - 24/04/2021
+try {
+    window.Popper = require('popper.js').default;
+    window.$ = window.jQuery = require('jquery');
+
+    require('bootstrap');
+} catch (e) {}
+// End Bổ sung từ file https://github.com/laravel/ui/blob/3.x/src/Presets/bootstrap-stubs/bootstrap.js
+
+
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
