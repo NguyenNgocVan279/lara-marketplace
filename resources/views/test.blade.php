@@ -1,4 +1,7 @@
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+@extends('layouts.app')
+@section('content')
 
-<input type="text" class="form-control">
-<button class="btn btn-primary">save</button>
+
+<div class="container">body</div>
+
+@endsection
