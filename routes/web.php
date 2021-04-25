@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+/* Route::get('/dashboard', function () {
+    return view('dashboard');
+}); */
+
+Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
