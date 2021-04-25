@@ -6,7 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Nhập địa chỉ E-mail') }}</div>
-
+                @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+                @endif               
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.request') }}">
                         @csrf
