@@ -21,8 +21,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
-/* Route::get('/dashboard', function () {
-    return view('dashboard');
-}); */
+Route::get('/auth', function () {
+    return view('backend.admin.index');
+});
+
+
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
