@@ -28,3 +28,8 @@ Route::get('/auth', function () {
 
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+
+// Admin
+Route::get('/auth/category', function () {
+    return view('backend.category.create');
+});
