@@ -30,6 +30,10 @@ Route::get('/auth', function () {
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 // Admin
-Route::get('/auth/category', function () {
+/* Route::get('/auth/category', function () {
     return view('backend.category.create');
+}); */
+
+Route::group(['prefix'=>'auth'], function() {
+    Route::resource('/category', 'App\Http\Controllers\CategoryController');
 });

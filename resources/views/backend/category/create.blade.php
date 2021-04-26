@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form class="forms-sample" action="" method="post">@csrf
+                            <form class="forms-sample" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="form-group">
                                     <label for="name">Tên danh mục</label>
                                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
