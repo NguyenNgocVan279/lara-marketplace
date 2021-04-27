@@ -65,7 +65,9 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subcategory = Subcategory::find($id);
+        return view('backend.subcategory.edit', compact('subcategory'));
+
     }
 
     /**
@@ -77,7 +79,13 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $subcategory = Subcategory::find($id);
+         $subcategory->update([
+             'name'=>$name = $request->name,
+             'category_id'=>$request->category_id,
+             'slug'=>Str::slug($name),
+         ]);
+         return redirect()->route('subcategory.index')->with('message', 'Cập nhật danh mục con thành công.');
     }
 
     /**
