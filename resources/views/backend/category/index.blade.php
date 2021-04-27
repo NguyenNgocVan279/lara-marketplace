@@ -28,7 +28,12 @@
                                                 <td><img src="{{ Storage::url($category->image)}}" alt="{{$category->slug}}"></td>
                                                 <td>{{ $category->name}}</td>
                                                 <td>{{ $category->slug}}</td>
-                                                <td> <button class="btn btn-info"><i class="mdi mdi-table-edit"></i></button></td>
+                                                <td>
+                                                    <a href="{{route('category.edit',[$category->id])}}">                                                   
+                                                        <button class="btn btn-info"><i class="mdi mdi-table-edit"></i></button>                                                   
+                                                    </a>
+                                                </td>
+                                                
                                                 <td><button class="btn btn-danger"><i class="mdi mdi-delete"></i></button></td>
                                             </tr>
                                         @empty
@@ -43,4 +48,6 @@
                     </div>
                 </div>
             </div>
-            @endsection
+        </div>
+    </div>
+@endsection
