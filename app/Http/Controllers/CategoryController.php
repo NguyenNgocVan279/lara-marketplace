@@ -46,7 +46,7 @@ class CategoryController extends Controller
             'slug'=>Str::slug($name)
         ]);
 
-        return redirect()->back();
+        return redirect()->route('category.index')->with('message','Tạo danh mục thành công.');
     }
 
     /**
@@ -97,7 +97,7 @@ class CategoryController extends Controller
             'slug'=>Str::slug($name),
         ]);
        
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('message','Cập nhật danh mục thành công.');
     }
 
     /**
@@ -112,6 +112,6 @@ class CategoryController extends Controller
         if(Storage::delete($category->image)) {
             $category->delete();
         }
-        return back();
+        return back()->with('message','Xoá danh mục thành công');
     }
 }

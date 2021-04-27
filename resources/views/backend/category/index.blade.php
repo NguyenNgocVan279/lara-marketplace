@@ -2,6 +2,7 @@
 @section('content')
     <div class="main-panel">
         <div class="content-wrapper">
+            @include('backend.inc.message')
             <h4>Danh sách danh mục</h4>
             <div class="row justify-content-center">
                 <div class="col-lg-12 grid-margin stretch-card">
