@@ -88,6 +88,7 @@ class SubcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Subcategory::find($id)->delete();        
+        return back()->with('message', 'Xoá danh mục con thành công.');
     }
 }

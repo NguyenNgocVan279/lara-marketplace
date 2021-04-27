@@ -49,7 +49,7 @@
                                                                         </button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        Khi đã xóa bạn sẽ không thể khôi phục lại!                                                                                                                                                                                                               
+                                                                        Khi đã xóa bạn sẽ không thể khôi phục lại! Bạn chắc chắn muốn xoá danh mục này?                                                                                                                                                                                                              
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
