@@ -8,6 +8,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+          <!--Danh mục-->
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
@@ -21,6 +22,22 @@
               </ul>
             </div>
           </li>
+          <!--End Danh mục-->
+          <!--Danh mục con-->
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Danh mục con</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic1">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ route('subcategory.create') }}">Thêm danh mục con</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('subcategory.index') }}">Danh sách danh mục con</a></li>
+              </ul>
+            </div>
+          </li>
+          <!--End Danh mục con-->
           <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <i class="mdi mdi-view-headline menu-icon"></i>
