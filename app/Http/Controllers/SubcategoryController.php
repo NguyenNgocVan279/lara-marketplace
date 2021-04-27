@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subcategory;
+use App\Http\Requests\SubcategoryFormRequest;
+use Illuminate\Support\Str;
 
 class SubcategoryController extends Controller
 {
@@ -32,9 +35,14 @@ class SubcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubcategoryFormRequest $request)
     {
-        //
+        Subcategory::create([
+            'name'=>$name = $request->name,
+            'category_id'=>$request->category_id,
+            'slug'=>Str::slug($name),
+        ]);
+        return back()->with('message','Tạo danh mục con thành công.');
     }
 
     /**
