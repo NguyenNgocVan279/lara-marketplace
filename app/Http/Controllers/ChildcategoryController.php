@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ChildcategoryFormRequest;
+use App\Http\Requests\ChildcategoryUpdateRequest;
 use App\Models\Childcategory;
 use Illuminate\Support\Str;
 
@@ -76,9 +77,14 @@ class ChildcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ChildcategoryUpdateRequest $request, $id)
     {
-        //
+        Childcategory::find($id)->update([
+            'name'=>$name = $request->name,
+            'subcategory_id'=>$request->subcategory_id,
+            'slug'=>Str::slug($name),
+        ]);
+        return redirect()->route('childcategory.index')->with('message', 'Cập nhật danh mục cháu thành công.');
     }
 
     /**
