@@ -65,7 +65,8 @@ class ChildcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $childcategory = Childcategory::find($id);
+        return view('backend.childcategory.edit', compact('childcategory'));
     }
 
     /**
