@@ -86,30 +86,33 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarHover">                
-                    <ul class="container-fluid navbar-nav">
-                        @for ($i=0;$i<12;$i++)
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href=""
-                                data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
-                                aria-expanded="false">
-                                Category
-                            </a>
-            
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item dropdown-toggle" href="">Subcategory(Computer)</a>
-            
-                                    <ul class="dropdown-menu">
-            
-                                        <li>
-                                            <a class="dropdown-item" href="">childcategory(Dell laptop)
-                                            </a>
-                                        </li>
-                                    </ul>        
-                                </li>       
-                            </ul>        
-                        </li>
-                        @endfor                    
+                    {{-- <ul class="container-fluid navbar-nav"> --}}
+                    <ul class="navbar-nav">
+                        @foreach ($menus as $menuItem)
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href=""
+                                    data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    {{ $menuItem->name }}
+                                </a>                
+                                <ul class="dropdown-menu">
+                                    @foreach ($menuItem->subcategories as $subMenuItem) <!-- "subcategories" là tên 1 hàm trong file model Category.php -->
+                                    <li>
+                                        <a class="dropdown-item dropdown-toggle" href="">{{ $subMenuItem->name }}</a>
+                
+                                        <ul class="dropdown-menu">
+                                            @foreach ($subMenuItem->childcategories as $childMenuItem) <!-- "childcategories" là tên 1 hàm trong file model Subcategory.php -->
+                                                <li>
+                                                    <a class="dropdown-item" href="">{{ $childMenuItem->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach                                            
+                                        </ul>        
+                                    </li>       
+                                    @endforeach                                    
+                                </ul>        
+                            </li>
+                        @endforeach                                      
                     </ul>
                 </div>
             </nav>
