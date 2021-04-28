@@ -76,10 +76,10 @@
 
     <style>
         td.category_1{
-            background-color: aliceblue;
+            background-color: azure ;
         }
         td.category_2{
-            background-color:aliceblue;
+            background-color:fuchsia;
         }
         td.category_3{
             background-color: antiquewhite;

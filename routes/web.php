@@ -34,4 +34,5 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 Route::group(['prefix'=>'auth'], function() {
     Route::resource('/category', 'App\Http\Controllers\CategoryController');
     Route::resource('/subcategory', 'App\Http\Controllers\SubcategoryController');
+    Route::resource('/childcategory', 'App\Http\Controllers\ChildcategoryController');
 });
