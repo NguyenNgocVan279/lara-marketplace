@@ -88,6 +88,7 @@ class ChildcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Childcategory::find($id)->delete();
+        return back()->with('message', 'Xoá danh mục cháu thành công.'); 
     }
 }
