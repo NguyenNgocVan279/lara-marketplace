@@ -74,8 +74,6 @@
                     </div>
                 </div>
             </nav>
-
-
             <!--second navbar-->
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-hover">
             
