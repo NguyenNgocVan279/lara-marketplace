@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ChildcategoryFormRequest;
+use App\Models\Childcategory;
+use Illuminate\Support\Str;
 
 class ChildcategoryController extends Controller
 {
@@ -32,9 +35,14 @@ class ChildcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ChildcategoryFormRequest $request)
     {
-        //
+        Childcategory::create([
+            'name'=>$name=$request->name,
+            'subcategory_id'=>$request->subcategory_id,
+            'slug'=>Str::slug($name),
+        ]);
+        return redirect()->back()->with('message', 'Tạo danh mục cháu thành công.');
     }
 
     /**
