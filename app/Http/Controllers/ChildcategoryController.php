@@ -16,7 +16,8 @@ class ChildcategoryController extends Controller
      */
     public function index()
     {
-        //
+        $childcategories = Childcategory::orderBy('subcategory_id')->get();        
+        return view('backend.childcategory.index',compact('childcategories'));
     }
 
     /**
