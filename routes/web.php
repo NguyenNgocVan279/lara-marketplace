@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/auth', function () {
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/', 'App\Http\Controllers\MenuController@menu');
+
+//ads
+Route::get('/ads/create', 'App\Http\Controllers\AdvertisementController@create');
 
 // ADMIN
 
