@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Advertisement;
+use Illuminate\Support\Str;
 
 class AdvertisementController extends Controller
 {
@@ -34,7 +36,24 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $data = $request->all();
+        $featureImage = $request->file('feature_image')->store('public/ads');
+        $firstImage = $request->file('first_image')->store('public/ads');
+        $secondImage = $request->file('second_image')->store('public/ads');
+        $thirdImage = $request->file('third_image')->store('public/ads');
+        $forthImage = $request->file('forth_image')->store('public/ads');
+        $data['feature_image'] = $featureImage;
+        $data['first_image'] = $firstImage;
+        $data['second_image'] = $secondImage;
+        $data['third_image'] = $thirdImage;
+        $data['forth_image'] = $forthImage;
+        $data['slug'] = Str::slug($request->name);
+        $data['user_id'] = auth()->user()->id;
+
+        Advertisement::create($data);
+        return "Tạo tin đăng thành công";
+
     }
 
     /**

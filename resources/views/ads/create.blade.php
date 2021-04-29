@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <form action="#" method="post" enctype="multipart/form-data">@csrf
+                <form action="{{ route('ads.store') }}" method="post" enctype="multipart/form-data">@csrf
                     <div class="card">
                         <div class="card-header text-white" style="background-color: red">
                             Tạo tin đăng
@@ -34,19 +34,19 @@
                             <div class="form-inline form-group mt-1">
 
                                 <div class="col-md-2">
-                                    <input type="file" class="" name="feature_image">
+                                    <input type="file" class="" name="feature_image" accept="image/*">
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="file" class="" name="first_image">
+                                    <input type="file" class="" name="first_image" accept="image/*">
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="file" class="" name="second_image">
+                                    <input type="file" class="" name="second_image" accept="image/*">
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="file" class="" name="third_image">
+                                    <input type="file" class="" name="third_image" accept="image/*">
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="file" class="" name="forth_image">
+                                    <input type="file" class="" name="forth_image" accept="image/*">
                                 </div>                       
 
                             </div>
@@ -55,16 +55,25 @@
                                 <div class="col-md-4">
                                     <select class="form-control" name="category_id">
                                         <option value="">Danh mục cha</option>
+                                        @foreach (App\Models\Category::all() as $category)
+                                        <Option value="{{ $category->id }}">{{ $category->name }}</Option>                                        
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select class="form-control" name="subcategory_id">
                                         <option value="">Danh mục con</option>
+                                        @foreach (App\Models\Subcategory::all() as $subcategory)
+                                            <Option value="{{ $subcategory->id }}">{{ $subcategory->name }}</Option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select class="form-control" name="childcategory_id">
                                         <option value="">Danh mục cháu</option>
+                                        @foreach (App\Models\Childcategory::all() as $childcategory)
+                                            <Option value="{{ $childcategory->id }}">{{ $childcategory->name }}</Option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -107,16 +116,25 @@
                                 <div class="col-md-4">
                                     <select class="form-control" name="province_id">
                                         <option value=""> Chọn tỉnh/thành</option>
+                                        @foreach (App\Models\Province::all() as $province)
+                                            <Option value="{{ $province->id }}">{{ $province->name }}</Option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select class="form-control" name="district_id">
                                         <option value="">Chọn quận/huyện</option>
+                                        @foreach (App\Models\District::all() as $district)
+                                            <Option value="{{ $district->id }}">{{ $district->name }}</Option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select class="form-control" name="ward_id">
                                         <option value="">Chọn phường/xã </option>
+                                        @foreach (App\Models\Ward::all() as $ward)
+                                            <Option value="{{ $ward->id }}">{{ $ward->name }}</Option>
+                                        @endforeach
                                     </select>
                                 </div>
 

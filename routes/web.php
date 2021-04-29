@@ -31,9 +31,9 @@ Route::get('/', 'App\Http\Controllers\MenuController@menu');
 
 //ads
 Route::get('/ads/create', 'App\Http\Controllers\AdvertisementController@create');
+Route::post('/ads/store', 'App\Http\Controllers\AdvertisementController@store')->middleware('auth')->name('ads.store');
 
 // ADMIN
-
 Route::group(['prefix'=>'auth'], function() {
     Route::resource('/category', 'App\Http\Controllers\CategoryController');
     Route::resource('/subcategory', 'App\Http\Controllers\SubcategoryController');
