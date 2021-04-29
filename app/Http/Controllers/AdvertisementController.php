@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AdsFormRequest;
 use App\Models\Advertisement;
 use Illuminate\Support\Str;
 
@@ -34,7 +35,7 @@ class AdvertisementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdsFormRequest $request)
     {
         //dd($request->all());
         $data = $request->all();
