@@ -1,4 +1,4 @@
-<template style="width:300px; height: 200px; background: red;">
+<template>
     <div>Hello World</div>
 </template>
 

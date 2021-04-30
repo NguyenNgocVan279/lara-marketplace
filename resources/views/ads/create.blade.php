@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div>
-    <example-component />
-</div>    
 <div class="container">        
         <div class="row ">
             <div class="col-md-3">
@@ -44,23 +41,21 @@
                         <div class="card-body">
                             <label for="file" class="mt-2"><b>Bạn có thể tải tối đa 5 ảnh</b></label>
                             <div class="form-inline form-group mt-1">
-
-                                <div class="col-md-2">
-                                    <input type="file" class="" name="feature_image" accept="image/*">
+                                <div class="col-md-2">                                    
+                                    <image-preview />
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="file" class="" name="first_image" accept="image/*">
+                                <div class="col-md-2">                                    
+                                    <first-image />
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="file" class="" name="second_image" accept="image/*">
+                                <div class="col-md-2">                                    
+                                    <second-image />
                                 </div>
-                                <div class="col-md-2">
-                                    <input type="file" class="" name="third_image" accept="image/*">
+                                <div class="col-md-2">                                  
+                                    <third-image />
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="file" class="" name="forth_image" accept="image/*">
-                                </div>                       
-
+                                <div class="col-md-3">                                  
+                                    <forth-image />
+                                </div>                     
                             </div>
                             <label for="file" class="mt-2"><b>Chọn danh mục</b></label>
                             <div class="form-inline form-group mt-1">
@@ -168,22 +163,5 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <style>
-        .vertical-menu a {
-            background-color: #fff;
-            color: #000;
-            display: block;
-            padding: 12px;
-            text-decoration: none;
-        }
-
-        .vertical-menu a:hover {
-            background-color: red;
-            color: #fff;
-        }
-
-    </style>
-
+    </div> 
 @endsection
