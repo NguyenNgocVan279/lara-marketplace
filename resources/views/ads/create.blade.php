@@ -59,30 +59,7 @@
                             </div>
                             <label for="file" class="mt-2"><b>Chọn danh mục</b></label>
                             <div class="form-inline form-group mt-1">
-                                <div class="col-md-4">
-                                    <select class="form-control" name="category_id">
-                                        <option value="">Danh mục cha</option>
-                                        @foreach (App\Models\Category::all() as $category)
-                                        <Option value="{{ $category->id }}">{{ $category->name }}</Option>                                        
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control" name="subcategory_id">
-                                        <option value="">Danh mục con</option>
-                                        @foreach (App\Models\Subcategory::all() as $subcategory)
-                                            <Option value="{{ $subcategory->id }}">{{ $subcategory->name }}</Option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control" name="childcategory_id">
-                                        <option value="">Danh mục cháu</option>
-                                        @foreach (App\Models\Childcategory::all() as $childcategory)
-                                            <Option value="{{ $childcategory->id }}">{{ $childcategory->name }}</Option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <category-dropdown />                                
                             </div>
 
                             <div class="form-group">

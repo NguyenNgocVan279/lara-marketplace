@@ -15,6 +15,8 @@ Vue.component('second-image', require('./components/imagepreview/SecondImage.vue
 Vue.component('third-image', require('./components/imagepreview/ThirdImage.vue').default);
 Vue.component('forth-image', require('./components/imagepreview/ForthImage.vue').default);
 
+Vue.component('category-dropdown', require('./components/CategoryDropDown.vue').default);
+
 //initialize vue
 const app = new Vue({
     el: '#app',
