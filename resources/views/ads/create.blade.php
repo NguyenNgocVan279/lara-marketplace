@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="container">
-        <h2>Xem Video hướng dẫn đăng tin </h2>
+<div>
+    <example-component />
+</div>    
+<div class="container">        
         <div class="row ">
             <div class="col-md-3">
                 <div class="card ">

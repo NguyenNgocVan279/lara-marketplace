@@ -9,7 +9,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
+        <!-- Chèn Scripts khi cài đặt Vue.js - 30/04/2021-->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- Fonts -->
