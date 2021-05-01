@@ -96,32 +96,7 @@
                             </div>
                             <label for="file" class="mt-2"><b>Chọn địa điểm</b></label>
                             <div class="form-inline form-group mt-1">
-
-                                <div class="col-md-4">
-                                    <select class="form-control" name="province_id">
-                                        <option value=""> Chọn tỉnh/thành</option>
-                                        @foreach (App\Models\Province::all() as $province)
-                                            <Option value="{{ $province->id }}">{{ $province->name }}</Option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control" name="district_id">
-                                        <option value="">Chọn quận/huyện</option>
-                                        @foreach (App\Models\District::all() as $district)
-                                            <Option value="{{ $district->id }}">{{ $district->name }}</Option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control" name="ward_id">
-                                        <option value="">Chọn phường/xã </option>
-                                        @foreach (App\Models\Ward::all() as $ward)
-                                            <Option value="{{ $ward->id }}">{{ $ward->name }}</Option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
+                                <address-dropdown />
                             </div>
                             <div class="form-group">
                                 <label for="phone_number">Điện thoại liên hệ</label>

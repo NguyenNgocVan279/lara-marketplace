@@ -16,15 +16,15 @@ class ApiAddressController extends Controller
         return response()->json($province);
     }
 
-    public function getDistrict()
+    public function getDistrict(Request $request)
     {
-        $district = District::where('province_id',1)->get();
+        $district = District::where('province_id',$request->province_id)->get();
         return response()->json($district);    
     }
 
-    public function getWard()
+    public function getWard(Request $request)
     {
-        $ward = Ward::where('district_id',1)->get();
+        $ward = Ward::where('district_id',$request->district_id)->get();
         return response()->json($ward);
     }
 }
