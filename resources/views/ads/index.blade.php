@@ -7,6 +7,7 @@
                 @include('sidebar')
             </div>
             <div class="col-md-9">
+                @include('backend.inc.message')
                 <table class="table table-bordered">
                     <thead>
                       <tr>
@@ -23,7 +24,13 @@
                         @forelse ($ads as $key=>$ad )
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
-                            <td><img src="{{ Storage::url($ad->feature_image) }}" width="100" alt=""></td>
+                            <td>
+                                <img src="{{ Storage::url($ad->feature_image) }}" width="100" alt="">
+                                <img src="{{ Storage::url($ad->first_image) }}" width="100" alt="">
+                                <img src="{{ Storage::url($ad->second_image) }}" width="100" alt="">
+                                <img src="{{ Storage::url($ad->third_image) }}" width="100" alt="">
+                                <img src="{{ Storage::url($ad->forth_image) }}" width="100" alt="">
+                            </td>
                             <td>{{ $ad->name }}</td>
                             <td style="color: blue;">{{ $ad->price }} đ</td>
                             <td>
@@ -33,7 +40,9 @@
                                     <span class="badge badge-danger">Pending</span>
                                 @endif
                             </td>
-                            <td><button class="btn btn-primary">Sửa</button></td>
+                            <td>
+                                <a href="{{ route('ads.edit',$ad->id) }}"><button class="btn btn-primary">Sửa</button></a>                                
+                            </td>
                             <td><button class="btn btn-info">Xem</button></td>
                             
                         </tr>
