@@ -2,7 +2,7 @@ require('./bootstrap');
 
 //import vue
 import Vue from 'vue';
-import axios from 'axios'
+import axios from 'axios';
 
 window.Vue = require('vue');
 window.axios = require('axios');
@@ -19,6 +19,7 @@ Vue.component('category-dropdown', require('./components/CategoryDropDown.vue').
 
 //initialize vue
 const app = new Vue({
+    
     el: '#app',
 
 });

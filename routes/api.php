@@ -18,9 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// For category
 Route::get('/category','App\Http\Controllers\Api\ApiCategoryController@getCategory');
-
 Route::get('/subcategory','App\Http\Controllers\Api\ApiCategoryController@getSubcategory');
-
 Route::get('/childcategory','App\Http\Controllers\Api\ApiCategoryController@getChildcategory');
+
+// For address
+Route::get('/province','App\Http\Controllers\Api\ApiAddressController@getProvince');
+Route::get('/district','App\Http\Controllers\Api\ApiAddressController@getDistrict');
+Route::get('/ward','App\Http\Controllers\Api\ApiAddressController@getWard');
 
