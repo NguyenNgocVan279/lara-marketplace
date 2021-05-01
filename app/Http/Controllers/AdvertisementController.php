@@ -79,6 +79,9 @@ class AdvertisementController extends Controller
     public function edit($id)
     {
         $ad = Advertisement::find($id);
+    
+        $this->authorize('edit-ad',$ad); // Sử dụng Gate trong file App\Providers\AuthServiceProvider.php
+         
         return view('ads.edit', compact('ad'));
     }
 
