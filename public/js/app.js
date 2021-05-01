@@ -1985,7 +1985,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/api/category').then(function (response) {
         _this.categories = response.data;
-      }).bind(this);
+      }); //.bind(this)
     },
     getSubcategories: function getSubcategories() {
       var _this2 = this;
@@ -1997,7 +1997,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this2.subcategories = response.data;
-      }).bind(this);
+      }); //.bind(this)
     },
     getChildcategories: function getChildcategories() {
       var _this3 = this;
@@ -2008,7 +2008,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (response) {
         _this3.childcategories = response.data;
-      }).bind(this);
+      }); //.bind(this)
     }
   }
 });

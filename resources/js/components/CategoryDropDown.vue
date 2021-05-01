@@ -48,18 +48,21 @@ export default {
         getCategories(){
             axios.get('/api/category').then((response)=>{
                 this.categories = response.data
-            }).bind(this)
+            })
+            //.bind(this)
         },
         getSubcategories(){
             // alert(this.category)
             axios.get('/api/subcategory',{params:{category_id:this.category}}).then((response)=>{
                 this.subcategories = response.data
-            }).bind(this)
+            })
+            //.bind(this)
         },
         getChildcategories(){
             axios.get('/api/childcategory',{params:{subcategory_id:this.subcategory}}).then((response)=>{
                 this.childcategories = response.data
-            }).bind(this)
+            })
+            //.bind(this)
         }
     }
 }
