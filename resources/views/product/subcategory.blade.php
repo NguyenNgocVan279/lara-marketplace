@@ -7,15 +7,12 @@
                 <div class="card">
                     <div class="card-header text-white text-center" style="background-color: red;">Filter ::</div>
                     <div class="card-body">
-                        //loop
+                        @foreach ($advertisements as $ad)
                         <p>
-                            name
-                        </p>
-                        //endloop
-                        
-
+                            <a href="#">{{ $ad->childcategory->name??''}}</a>                            
+                        </p>                        
+                        @endforeach                                        
                     </div>
-
                 </div>
             </div>
             <div class="col-md-9">
