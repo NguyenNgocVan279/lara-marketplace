@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address', //bổ sung khi xây dựng user profile update
+        'avatar', //bổ sung khi xây dựng user profile update
     ];
 
     /**

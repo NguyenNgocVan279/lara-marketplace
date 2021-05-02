@@ -37,7 +37,8 @@ Route::get('/ads/{id}/edit', 'App\Http\Controllers\AdvertisementController@edit'
 Route::put('/ads/{id}/update', 'App\Http\Controllers\AdvertisementController@update')->name('ads.update')->middleware('auth');
 
 // User profile
-Route::get('/profile', 'App\Http\Controllers\ProfileController@index');
+Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile')->middleware('auth');
+Route::post('/profile', 'App\Http\Controllers\ProfileController@updateProfile')->name('update.profile')->middleware('auth');
 
 // ADMIN
 Route::group(['prefix'=>'auth'], function() {

@@ -7,26 +7,32 @@
             @include('sidebar')
         </div>
         <div class="col-md-5">
-            <div class="card">
-                <div class="card-header text-white" style="background-color: red">Cập nhật thông tin cá nhân</div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="">Tên</label>
-                        <input type="text" class="form-control" value="{{ auth()->user()->name }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Địa chỉ</label>
-                        <input type="text" class="form-control" value="{{ auth()->user()->address }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Ảnh đại diện</label>
-                        <img src="{{ auth()->user()->avatar }}">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-danger">Cập nhật</button>
+            {{-- @if (session('status') === 'user-updated')
+            <div class="alert alert-success">Đổi mật khẩu thành công!</div>
+            @endif --}}
+            <form action="{{ route('update.profile') }}" method="post" enctype="multipart/form-data">@csrf
+                <div class="card">
+                    <div class="card-header text-white" style="background-color: red">Cập nhật thông tin cá nhân</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="">Tên</label>
+                            <input type="text" class="form-control" name="name" value="{{ auth()->user()->name }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Địa chỉ</label>
+                            <input type="text" class="form-control" name="address" value="{{ auth()->user()->address }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ảnh đại diện</label>
+                            <input type="file" name="image" class="form-control" accept="image/*">
+                            {{-- <img src="{{ auth()->user()->avatar }}"> --}}
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-danger">Cập nhật</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>           
            
         </div> 
         <div class="col-md-3">
