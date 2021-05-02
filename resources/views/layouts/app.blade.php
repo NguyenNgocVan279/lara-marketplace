@@ -156,6 +156,11 @@
                 background-color: red;
                 color: #fff;
             }
+
+            .vertical-menu a.active {
+                background-color: red;
+                color: #fff;
+            }
             /* End Chuyển từ file views/ads/create.blade.php */
         </style>
     </body>

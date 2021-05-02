@@ -20,7 +20,7 @@
                 <form action="{{ route('ads.store') }}" method="post" enctype="multipart/form-data">@csrf
                     <div class="card">
                         <div class="card-header text-white" style="background-color: red">
-                            <h4>Tạo tin đăng</h3> 
+                            <h5>Tạo tin đăng</h5> 
                         </div>
                         <div class="card-body">
                             <label for="file" class="mt-2"><b>Bạn có thể tải tối đa 5 ảnh</b></label>

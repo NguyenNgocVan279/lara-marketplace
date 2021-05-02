@@ -30,7 +30,7 @@ Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 Route::get('/', 'App\Http\Controllers\MenuController@menu');
 
 //ads
-Route::get('/ads/create', 'App\Http\Controllers\AdvertisementController@create')->middleware('auth');
+Route::get('/ads/create', 'App\Http\Controllers\AdvertisementController@create')->name('ads.create')->middleware('auth');
 Route::post('/ads/store', 'App\Http\Controllers\AdvertisementController@store')->middleware('auth')->name('ads.store');
 Route::get('/ads', 'App\Http\Controllers\AdvertisementController@index')->name('ads.index')->middleware('auth');
 Route::get('/ads/{id}/edit', 'App\Http\Controllers\AdvertisementController@edit')->name('ads.edit')->middleware('auth');

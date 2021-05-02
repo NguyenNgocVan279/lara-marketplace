@@ -7,8 +7,8 @@
     <div class="vertical-menu">
         <a href="#">Bảng điều khiển</a>
         <a href="#">Thông tin cá nhân</a>
-        <a href="#">Tạo tin đăng</a>
-        <a href="#">Tin đã đăng</a>
+        <a href="{{route('ads.create')}}" class="{{request()->is('ads/create')?'active':''}}">Tạo tin đăng</a>
+        <a href="{{route('ads.index')}}" class="{{request()->is('ads')?'active':''}}">Tin đã đăng</a>
         <a href="#">Tin chờ duyệt</a>
         <a href="#" class="">Hộp thư</a>
     </div>

@@ -25,6 +25,7 @@
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td style="width: 130px; height:100px;">
+                                <!--Use bootstrap 4.6->component->courosel-->
                                 <div id="carouselExampleControls{{$ad->id}}" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                       <div class="carousel-item active">
@@ -52,6 +53,7 @@
                                       <span class="sr-only">Next</span>
                                     </a>
                                 </div>
+                                <!--End Use bootstrap 4.6->component->courosel-->
                             </td>
                             <td>{{ $ad->name }}</td>
                             <td style="color: blue;">{{ $ad->price }} đ</td>
