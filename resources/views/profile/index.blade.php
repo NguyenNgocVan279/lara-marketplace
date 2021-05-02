@@ -10,7 +10,21 @@
             <div class="card">
                 <div class="card-header text-white" style="background-color: red">Cập nhật thông tin cá nhân</div>
                 <div class="card-body">
-
+                    <div class="form-group">
+                        <label for="">Tên</label>
+                        <input type="text" class="form-control" value="{{ auth()->user()->name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Địa chỉ</label>
+                        <input type="text" class="form-control" value="{{ auth()->user()->address }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ảnh đại diện</label>
+                        <img src="{{ auth()->user()->avatar }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">Cập nhật</button>
+                    </div>
                 </div>
             </div>
            
