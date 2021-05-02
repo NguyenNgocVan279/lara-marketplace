@@ -7,6 +7,8 @@ use App\Http\Requests\AdsFormRequest;
 use App\Http\Requests\AdsFormUpdateRequest;
 use App\Models\Advertisement;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertisementController extends Controller
 {
@@ -17,7 +19,7 @@ class AdvertisementController extends Controller
      */
     public function index()
     {
-        $ads = Advertisement::where('user_id', auth()->user()->id)->get();
+        $ads = Advertisement::latest()->where('user_id', auth()->user()->id)->get();
         return view('ads.index', compact('ads')); 
     }
 
@@ -139,6 +141,8 @@ class AdvertisementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ad = Advertisement::find($id);
+        $ad->delete();
+        return back()->with('message', 'Xoá tin đăng thành công.');
     }
 }

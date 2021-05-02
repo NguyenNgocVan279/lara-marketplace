@@ -18,6 +18,7 @@
                         <th scope="col">Trạng thái</th>
                         <th scope="col">Sửa</th>
                         <th scope="col">Xem</th>
+                        <th scope="col">Xoá</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -68,13 +69,39 @@
                                 <a href="{{ route('ads.edit',$ad->id) }}"><button class="btn btn-primary">Sửa</button></a>                                
                             </td>
                             <td><button class="btn btn-info">Xem</button></td>
-                            
+                            <td>                              
+                              <!-- Button trigger modal -->
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$ad->id}}">
+                                Xoá
+                              </button>                              
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModal{{$ad->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <form action="{{ route('ads.destroy',[$ad->id]) }}" method="post">@csrf
+                                    @method('DELETE')
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Xác nhận trước khi xoá</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        Khi đã xoá bạn sẽ không thể khôi phục lại tin đăng. Bạn chắc chắn muốn xoá không?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Không xoá</button>
+                                        <button type="submit" class="btn btn-danger">Có, muốn xoá</button>
+                                      </div>
+                                    </div>
+                                  </form>                                
+                                </div>
+                              </div>
+                            </td>                                                      
                         </tr>
                         @empty
                         <td>Bạn chưa có tin đăng nào.</td>
-                        @endforelse
-                      
-                      
+                        @endforelse                                         
                     </tbody>
                   </table>
             </div>
