@@ -36,6 +36,9 @@ Route::get('/ads', 'App\Http\Controllers\AdvertisementController@index')->name('
 Route::get('/ads/{id}/edit', 'App\Http\Controllers\AdvertisementController@edit')->name('ads.edit')->middleware('auth');
 Route::put('/ads/{id}/update', 'App\Http\Controllers\AdvertisementController@update')->name('ads.update')->middleware('auth');
 
+// User profile
+Route::get('/profile', 'App\Http\Controllers\ProfileController@index');
+
 // ADMIN
 Route::group(['prefix'=>'auth'], function() {
     Route::resource('/category', 'App\Http\Controllers\CategoryController');
