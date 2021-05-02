@@ -7,9 +7,9 @@
                 <div class="card">
                     <div class="card-header text-white text-center" style="background-color: red;">Filter ::</div>
                     <div class="card-body">
-                        @foreach ($advertisements as $ad)
+                        @foreach ($filterByChildCategories as $filterchildcategory)
                         <p>
-                            <a href="#">{{ $ad->childcategory->name??''}}</a>                            
+                            <a href="#">{{ $filterchildcategory->childcategory->name??''}}</a>                            
                         </p>                        
                         @endforeach                                        
                     </div>
