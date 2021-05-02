@@ -10,7 +10,10 @@ use App\Models\Advertisement;
 
 class FrontendController extends Controller
 {
-    public function findBasedOnSubcategory($categorySlug,$subcategorySlug){
-        return view('product.subcategory');
+    public function findBasedOnSubcategory($categorySlug, Subcategory $subcategorySlug){
+        //dd($subcategorySlug);
+        $advertisements = $subcategorySlug->ads;
+        //return $advertisements;
+        return view('product.subcategory',compact('advertisements'));
     }
 }

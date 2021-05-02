@@ -20,14 +20,14 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    loop
+                    @forelse ($advertisements as $advertisement)
                         <div class="col-3">
-                            
+                            <img src="{{ Storage::url($advertisement->feature_image) }}" class="img-thumbnail" alt="...">
+                            <p class="text-center card-footer" style="color:#222;">{{ $advertisement->name }} <br> {{ $advertisement->price }}đ</p>   
                         </div>
-                       
-                       
-
-                   //endloop
+                    @empty
+                        Xin lỗi, danh mục này không có sản phẩm nào.
+                    @endforelse                                         
                 </div>
             </div>
         </div>
