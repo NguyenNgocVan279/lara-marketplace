@@ -50,4 +50,5 @@ Route::group(['prefix'=>'auth'], function() {
 
 // Frontend
 Route::get('/san-pham/{categorySlug}/{subcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnSubcategory')->name('subcategory.show');
+Route::get('/san-pham/{categorySlug}/{subcategorySlug}/{childcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnChildcategory')->name('childcategory.show');
 

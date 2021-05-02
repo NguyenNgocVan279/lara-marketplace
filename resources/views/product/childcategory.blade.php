@@ -9,7 +9,7 @@
                     <div class="card-body">
                         @foreach ($filterByChildCategories as $filterchildcategory)
                         <p>                            
-                            <a href="{{url()->current()}}/{{($filterchildcategory->childcategory->slug)??''}}">
+                            <a href="{{($filterchildcategory->childcategory->slug)??''}}">
                                 {{ $filterchildcategory->childcategory->name??''}}
                             </a>                            
                         </p>                        

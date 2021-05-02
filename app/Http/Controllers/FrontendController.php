@@ -17,4 +17,10 @@ class FrontendController extends Controller
         $filterByChildCategories = $subcategorySlug->ads->unique('childcategory_id');//fix duplicate childcategory in filter
         return view('product.subcategory',compact('advertisements','filterByChildCategories'));
     }
+
+    public function findBasedOnChildcategory($categorySlug, Subcategory $subcategorySlug, Childcategory $childcategorySlug) {
+        $advertisements = $childcategorySlug->ads; // lấy tất cả các ad trong bảng Advertisements 
+        $filterByChildCategories = $subcategorySlug->ads->unique('childcategory_id');//fix duplicate childcategory in filter
+        return view('product.childcategory',compact('advertisements','filterByChildCategories'));
+    }
 }
