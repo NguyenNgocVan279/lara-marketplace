@@ -88,7 +88,7 @@
                     <ul class="navbar-nav">
                         @foreach ($menus as $menuItem)
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href=""
+                                <a class="nav-link dropdown-toggle" href="{{ route('category.show',[$menuItem->slug]) }}"
                                     data-toggle="dropdown_remove_dropdown_class_for_clickable_link" aria-haspopup="true"
                                     aria-expanded="false">
                                     {{ $menuItem->name }}

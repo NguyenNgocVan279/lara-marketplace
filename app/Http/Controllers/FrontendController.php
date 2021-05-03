@@ -10,6 +10,12 @@ use App\Models\Advertisement;
 
 class FrontendController extends Controller
 {
+    public function findBasedOnCategory(Category $categorySlug) {
+        $advertisements = $categorySlug->ads;
+        $filterBySubcategory = Subcategory::where('category_id',$categorySlug->id)->get();
+        return view('product.category', compact('advertisements','filterBySubcategory'));
+    }
+
     public function findBasedOnSubcategory(Request $request, $categorySlug, Subcategory $subcategorySlug){
         //dd($subcategorySlug);
 
@@ -21,7 +27,6 @@ class FrontendController extends Controller
             return $query->where('price','<=',$maxPrice);
         })->get();
         // End sắp xếp theo giá
-
 
         //$advertisements = $subcategorySlug->ads; // lấy tất cả các ad trong bảng Advertisements 
         $advertisementWithoutFilter = $subcategorySlug->ads; // lấy tất cả các ad trong bảng Advertisements 
