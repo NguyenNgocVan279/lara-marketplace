@@ -16,6 +16,24 @@
                         @endforeach                                        
                     </div>
                 </div>
+                <br>
+                <form action="{{url()->current()}}" method="GET">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Giá thấp nhất</label>
+                                <input type="text" name="minPrice" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Giá cao nhất</label>
+                                <input type="text" name="maxPrice" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-md-9">
                 <div class="row">
