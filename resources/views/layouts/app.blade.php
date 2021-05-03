@@ -101,7 +101,7 @@
                                         <ul class="dropdown-menu">
                                             @foreach ($subMenuItem->childcategories as $childMenuItem) <!-- "childcategories" là tên 1 hàm trong file model Subcategory.php -->
                                                 <li>
-                                                    <a class="dropdown-item" href="">{{ $childMenuItem->name }}
+                                                    <a class="dropdown-item" href="{{route('childcategory.show',[$menuItem->slug,$subMenuItem->slug,$childMenuItem->slug])}}">{{ $childMenuItem->name }}
                                                     </a>
                                                 </li>
                                             @endforeach                                            
