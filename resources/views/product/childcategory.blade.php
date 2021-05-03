@@ -3,7 +3,7 @@
 
     <div class="container ">
         <div class="row ">
-            <div class="col-md-3">
+            <div class="col-md-3">                
                 <div class="card">
                     <div class="card-header text-white text-center" style="background-color: red;">Filter ::</div>
                     <div class="card-body">
@@ -16,7 +16,25 @@
                         @endforeach                                        
                     </div>
                 </div>
-            </div>
+                <br>
+                <form action="{{url()->current()}}" method="GET">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Giá thấp nhất</label>
+                                <input type="text" name="minPrice" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Giá cao nhất</label>
+                                <input type="text" name="maxPrice" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-danger">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>            
             <div class="col-md-9">
                 <div class="row">
                     @forelse ($advertisements as $advertisement)
