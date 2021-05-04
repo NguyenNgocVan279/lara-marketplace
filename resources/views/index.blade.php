@@ -20,15 +20,18 @@
   <div class="container mt-5">
     <span>
       <h1>Nhà đất bán</h1>
-      <a href="#" class="float-right">Xem tất cả</a>
+      <a href="{{ route('category.show',$category->slug) }}" class="float-right">Xem tất cả</a>
     </span>
+    <br>
     <div id="carouselExampleFade" class="carousel slide" data-ride="carousel" data-interval="2500">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row">
             @forelse ($firstAds as $firstAd)
               <div class="col-3">
-                <img src="{{Storage::url($firstAd->feature_image)}}" class="img-thumbnail" style="height: 170px" alt="...">
+                <a href="{{ route('product.view',[$firstAd->id,$firstAd->slug]) }}">
+                  <img src="{{Storage::url($firstAd->feature_image)}}" class="img-thumbnail" style="height: 170px" alt="...">                  
+                </a>
                 <p class="text-center card-footer" style="color:#222;">{{ $firstAd->name}} <br> {{ $firstAd->price }}đ</p>
               </div> 
             @empty              
@@ -39,7 +42,9 @@
           <div class="row">
             @forelse ($secondAds as $secondAd)
               <div class="col-3">
-                <img src="{{ Storage::url($secondAd->feature_image) }}" class="img-thumbnail" style="height: 170px" alt="...">
+                <a href="{{ route('product.view',[$secondAd->id,$secondAd->slug]) }}">
+                  <img src="{{ Storage::url($secondAd->feature_image) }}" class="img-thumbnail" style="height: 170px" alt="...">
+                </a>
                 <p class="text-center card-footer" style="color:#222;">{{ $secondAd->name}} <br> {{ $secondAd->price }}đ</p>
               </div>  
             @empty              
