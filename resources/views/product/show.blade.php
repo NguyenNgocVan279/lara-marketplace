@@ -48,9 +48,9 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header">Thông tin bổ sung</div>
-                        <p>Tỉnh/thành: {{$advertisement->province->name}}</p>
-                        <p>Quận/huyện: {{$advertisement->district->name}}</p>
-                        <p>Xã/phường: {{$advertisement->ward->name}}</p>
+                        <p>Tỉnh/thành: {{$advertisement->province->name??''}}</p>
+                        <p>Quận/huyện: {{$advertisement->district->name??''}}</p>
+                        <p>Xã/phường: {{$advertisement->ward->name??''}}</p>
                         <p>Trạng thái tài sản: {{$advertisement->product_condition}}</p>
                         @if($advertisement->link)
                         <p>Video: <a href="{{$advertisement->link}}">{{$advertisement->link}}</a></p>
