@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class, //thêm thủ công khi cài fortify
+        Cohensive\Embed\EmbedServiceProvider::class //thêm thủ công khi cài KaneCohen/embed - Hiển thị video
+        
 
     ],
 
@@ -228,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Embed' => Cohensive\Embed\Facades\Embed::class  //thêm thủ công khi cài KaneCohen/embed - Hiển thị video
 
     ],
 

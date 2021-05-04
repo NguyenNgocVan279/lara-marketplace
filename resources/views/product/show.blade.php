@@ -57,6 +57,12 @@
                         @endif
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        {!! $advertisement->displayVideoFromLink() !!}
+                    </div>
+
+                </div>
             </div>
             <div class="col-md-6">
                 <h1>{{$advertisement->name}}</h1>

@@ -9,11 +9,21 @@ use App\Models\Province;
 use App\Models\District;
 use App\Models\Ward;
 use App\Models\User;
+use Cohensive\Embed\Facades\Embed;
 
 class Advertisement extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function displayVideoFromLink() {
+        $embed = Embed::make($this->link)->parseUrl();
+        if(!$embed){
+            return;
+        }
+        $embed->setAttribute(['width' => 500]);
+        return $embed->getHtml();
+    }
 
     public function childcategory() {
         return $this->hasOne(Childcategory::class,'id','childcategory_id');
