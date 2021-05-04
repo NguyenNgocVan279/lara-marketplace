@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['*'], function($view) {
+        View::composer(['*'], function($view) { //Khai báo menu available every view of our application
             $menus = \App\Models\Category::with('subcategories')->get();
             $view->with('menus',$menus); 
         });
