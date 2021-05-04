@@ -44,14 +44,34 @@
                         <p>{{$advertisement->description}}</p>
                     </div>
                 </div>
+                <hr>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header">Thông tin bổ sung</div>
+                        <p>Tỉnh/thành: {{$advertisement->province->name}}</p>
+                        <p>Quận/huyện: {{$advertisement->district->name}}</p>
+                        <p>Xã/phường: {{$advertisement->ward->name}}</p>
+                        <p>Trạng thái tài sản: {{$advertisement->product_condition}}</p>
+                        @if($advertisement->link)
+                        <p>Video: <a href="{{$advertisement->link}}">{{$advertisement->link}}</a></p>
+                        @endif
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <h1>{{$advertisement->name}}</h1>
-                <p>Price: {{$advertisement->price}}đ, {{$advertisement->price_status}}</p>
-                <p>Posted: {{$advertisement->created_at->diffForHumans()}}</p>
+                <p>Giá: {{$advertisement->price}}đ, {{$advertisement->price_status}}</p>
+                <p>Đăng vào lúc: {{$advertisement->created_at->diffForHumans()}}</p>
+                <p>Địa chỉ tài sản: {{$advertisement->listing_location}}</p>
                 <hr>
-                <img src="/img/man.jpg" width="120" alt="">
-                <p>Seller Name</p>
+                @if(!$advertisement->user->avatar){
+                    <img src="/img/man.jpg" width="120" alt="">
+                } 
+                @else
+                    <img src="{{ Storage::url($advertisement->user->avatar)}}" width="120">
+                @endif
+                
+                <p>{{$advertisement->user->name}}</p>
             </div>
         </div>
     </div>
