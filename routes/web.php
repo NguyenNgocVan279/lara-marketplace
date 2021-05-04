@@ -49,7 +49,8 @@ Route::group(['prefix'=>'auth'], function() {
 });
 
 // Frontend
-Route::get('/san-pham/{categorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnCategory')->name('category.show');
-Route::get('/san-pham/{categorySlug}/{subcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnSubcategory')->name('subcategory.show');
-Route::get('/san-pham/{categorySlug}/{subcategorySlug}/{childcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnChildcategory')->name('childcategory.show');
+Route::get('/product/{categorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnCategory')->name('category.show');
+Route::get('/product/{categorySlug}/{subcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnSubcategory')->name('subcategory.show');
+Route::get('/product/{categorySlug}/{subcategorySlug}/{childcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnChildcategory')->name('childcategory.show');
+Route::get('/products/{id}/{slug}', 'App\Http\Controllers\FrontendController@show')->name('product.view');
 
