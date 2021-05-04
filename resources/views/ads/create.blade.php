@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Mô tả</label>
-                                <textarea name="description" class="form-control"></textarea>
+                                <textarea name="description" id="mytextarea" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="description">Mức giá</label>

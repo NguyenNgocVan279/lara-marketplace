@@ -53,10 +53,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Mô tả</label>
-                                <textarea name="description" class="form-control">{{ $ad->description }}</textarea>
+                                <textarea name="description" id="mytextarea" class="form-control">{{ $ad->description }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="description">Mức giá</label>
+                                <label for="price">Mức giá</label>
                                 <input type="text" name="price" class="form-control" value="{{ $ad->price }}">
                             </div>
                             <div class="form-group">
