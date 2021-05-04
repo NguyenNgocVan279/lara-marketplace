@@ -39,9 +39,11 @@
                 <div class="row">
                     @forelse ($advertisements as $advertisement)
                         <div class="col-3">
-                            <img src="{{ Storage::url($advertisement->feature_image) }}" class="img-thumbnail" alt="...">
-                            <p class="text-center card-footer" style="color:#222;">{{ $advertisement->name }} <br> {{ $advertisement->price }}đ</p>   
+                            <a href="{{route('product.view',[$advertisement->id,$advertisement->slug])}}">
+                                <img src="{{ Storage::url($advertisement->feature_image) }}" class="img-thumbnail" alt="...">
+                                <p class="text-center card-footer" style="color:#222;">{{ $advertisement->name }} <br> {{ $advertisement->price }}đ</p>   
                         </div>
+                            </a>
                     @empty
                         Xin lỗi, danh mục này không có sản phẩm nào.
                     @endforelse                                         

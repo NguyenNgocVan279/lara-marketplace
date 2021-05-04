@@ -12,21 +12,21 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="width:550px; height:350px;">
                     <div class="carousel-item active">
-                    <img src="{{ Storage::url($advertisement->feature_image)}}" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($advertisement->feature_image)}}" class="d-block w-100" height="100%" width="100%" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ Storage::url($advertisement->first_image)}}" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($advertisement->first_image)}}" class="d-block w-100" height="100%" width="100%" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ Storage::url($advertisement->second_image)}}" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($advertisement->second_image)}}" class="d-block w-100" height="100%" width="100%" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ Storage::url($advertisement->third_image)}}" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($advertisement->third_image)}}" class="d-block w-100" height="100%" width="100%" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ Storage::url($advertisement->forth_image)}}" class="d-block w-100" alt="...">
+                    <img src="{{ Storage::url($advertisement->forth_image)}}" class="d-block w-100" height="100%" width="100%" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
