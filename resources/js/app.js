@@ -18,6 +18,7 @@ Vue.component('forth-image', require('./components/imagepreview/ForthImage.vue')
 Vue.component('category-dropdown', require('./components/CategoryDropDown.vue').default);
 
 Vue.component('address-dropdown', require('./components/AddressDropDown.vue').default);
+Vue.component('message', require('./components/Message.vue').default);
 
 //initialize vue
 const app = new Vue({

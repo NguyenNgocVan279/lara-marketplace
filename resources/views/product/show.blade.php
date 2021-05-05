@@ -75,9 +75,17 @@
                 } 
                 @else
                     <img src="{{ Storage::url($advertisement->user->avatar)}}" width="120">
-                @endif
+                @endif                
+                <p>{{$advertisement->user->name}} <br>
+                    <span>
+                        @if (Auth()->check())
+                            <message></message>
+                        @else
+                           <button class="btn btn-danger">Đăng nhập để chat</button> 
+                        @endif                        
+                    </span>                    
+                </p>
                 
-                <p>{{$advertisement->user->name}}</p>
             </div>
         </div>
     </div>
