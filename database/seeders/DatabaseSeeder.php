@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvinceTableSeeder::class);
         $this->call(DistrictTableSeeder::class);
         $this->call(WardTableSeeder::class);
+
+        // Seed admin
+        $this->call(UserTableSeeder::class);
     }
 }
