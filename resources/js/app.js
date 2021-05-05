@@ -19,6 +19,7 @@ Vue.component('category-dropdown', require('./components/CategoryDropDown.vue').
 
 Vue.component('address-dropdown', require('./components/AddressDropDown.vue').default);
 Vue.component('message', require('./components/Message.vue').default);
+Vue.component('conversation', require('./components/Conversation.vue').default);
 
 //initialize vue
 const app = new Vue({

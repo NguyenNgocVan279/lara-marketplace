@@ -54,5 +54,6 @@ Route::get('/product/{categorySlug}/{subcategorySlug}/{childcategorySlug}', 'App
 Route::get('/products/{id}/{slug}', 'App\Http\Controllers\FrontendController@show')->name('product.view');
 
 // Message
-Route::post('/send/message','App\Http\Controllers\SendMessageController@store');
+Route::post('/send/message','App\Http\Controllers\SendMessageController@store')->middleware('auth');
+Route::get('message','App\Http\Controllers\SendMessageController@index')->middleware('auth');
 

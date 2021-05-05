@@ -15,4 +15,8 @@ class SendMessageController extends Controller
             'body'=>$request->body
         ]);
     }
+
+    public function index() {
+        return view('message.index');
+    }
 }

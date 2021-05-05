@@ -45,6 +45,10 @@ export default {
     methods:{
         sendMessage()
         {
+            if(this.body==''){
+                alert('Vui lòng viết tin nhắn')
+            }
+            return;
             axios.post('/send/message',{
                 body:this.body,
                 receiverId:this.receiverId,
