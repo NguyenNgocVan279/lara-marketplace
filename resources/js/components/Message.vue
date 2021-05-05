@@ -18,11 +18,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <textarea class="form-control" placeholder="Vui lòng soạn tin nhắn tại đây..."></textarea>
+                <textarea v-model="body" class="form-control" placeholder="Vui lòng soạn tin nhắn tại đây..."></textarea>
+                <p v-if="successMessage" style="color:green;">Tin nhắn đã được gửi đi</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                <button type="button" class="btn btn-danger">Gửi đi</button>
+                <button type="button" class="btn btn-danger" @click.prevent="sendMessage()">Gửi đi</button>
             </div>
             </div>
         </div>
@@ -34,6 +35,28 @@
 export default {
     
     props: ['sellerName','userId','receiverId','adId'],
+
+    data(){
+        return{
+            body:"",
+            successMessage:false
+        }
+    },
+    methods:{
+        sendMessage()
+        {
+            axios.post('/send/message',{
+                body:this.body,
+                receiverId:this.receiverId,
+                userId:this.userId,
+                adId:this.adId
+            }).then((response)=>{
+                this.body=''
+                this.successMessage=true
+            })
+        }
+    }
+    
     
 }
 </script>

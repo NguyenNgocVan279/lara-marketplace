@@ -53,3 +53,6 @@ Route::get('/product/{categorySlug}/{subcategorySlug}', 'App\Http\Controllers\Fr
 Route::get('/product/{categorySlug}/{subcategorySlug}/{childcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnChildcategory')->name('childcategory.show');
 Route::get('/products/{id}/{slug}', 'App\Http\Controllers\FrontendController@show')->name('product.view');
 
+// Message
+Route::post('/send/message','App\Http\Controllers\SendMessageController@store');
+
