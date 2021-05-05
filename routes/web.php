@@ -21,10 +21,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/auth', function () {
-    return view('backend.admin.index');
-});
-
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
 Route::get('/', 'App\Http\Controllers\MenuController@menu');
@@ -42,7 +38,10 @@ Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('pr
 Route::post('/profile', 'App\Http\Controllers\ProfileController@updateProfile')->name('update.profile')->middleware('auth');
 
 // ADMIN
-Route::group(['prefix'=>'auth'], function() {
+Route::group(['prefix'=>'auth','middleware'=>'admin'], function() {
+    Route::get('/', function () {
+        return view('backend.admin.index');
+    });
     Route::resource('/category', 'App\Http\Controllers\CategoryController');
     Route::resource('/subcategory', 'App\Http\Controllers\SubcategoryController');
     Route::resource('/childcategory', 'App\Http\Controllers\ChildcategoryController');
