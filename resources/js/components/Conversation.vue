@@ -21,7 +21,7 @@
                             <div class="chat-body2 clearfix">
                                 <div class="header clearfix">
                                     <strong class="primary-font">
-                                       Sender Name
+                                       {{message.user.name}}
                                     </strong>
                                     <small class="right text-muted">
                                         <span

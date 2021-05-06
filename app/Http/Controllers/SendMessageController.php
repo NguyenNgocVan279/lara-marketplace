@@ -21,7 +21,8 @@ class SendMessageController extends Controller
     }
 
     public function chatWithThisUser() {
-        $conversations = Message::where('user_id',auth()->id())
+        $conversations = Message::orderBy('id','DESC')
+            ->where('user_id',auth()->id())
             ->orWhere('receiver_id',auth()->id())
             ->get();
         $users = $conversations->map(function($conversation){
@@ -34,11 +35,12 @@ class SendMessageController extends Controller
     }
 
     public function showMessages(Request $request, $id) {
-        $messages = Message::where('receiver_id',auth()->user()->id)
+        $messages = Message::with(['user','ads'])->where('receiver_id',auth()->user()->id)
             ->where('user_id',$id)
             ->orWhere('user_id',auth()->user()->id)
             ->where('receiver_id',$id)
             ->get();
         return $messages;
     }
+
 }

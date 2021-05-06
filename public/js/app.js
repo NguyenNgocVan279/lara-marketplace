@@ -39101,7 +39101,17 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "chat-body2 clearfix" }, [
-                  _vm._m(1, true),
+                  _c("div", { staticClass: "header clearfix" }, [
+                    _c("strong", { staticClass: "primary-font" }, [
+                      _vm._v(
+                        "\n                                   " +
+                          _vm._s(message.user.name) +
+                          "\n                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
@@ -39169,19 +39179,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header clearfix" }, [
-      _c("strong", { staticClass: "primary-font" }, [
-        _vm._v(
-          "\n                                   Sender Name\n                                "
-        )
-      ]),
-      _vm._v(" "),
-      _c("small", { staticClass: "right text-muted" }, [
-        _c("span", { staticClass: "glyphicon glyphicon-time" }),
-        _vm._v(
-          "\n                                    date\n                                "
-        )
-      ])
+    return _c("small", { staticClass: "right text-muted" }, [
+      _c("span", { staticClass: "glyphicon glyphicon-time" }),
+      _vm._v(
+        "\n                                    date\n                                "
+      )
     ])
   },
   function() {
