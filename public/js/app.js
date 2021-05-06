@@ -39099,7 +39099,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "header clearfix" }, [
               _c("strong", { staticClass: "primary-font" }, [
                 _vm._v(
-                  "\n                                    Name\n                                "
+                  "\n                                   Sender Name\n                                "
                 )
               ]),
               _vm._v(" "),
@@ -39138,7 +39138,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("strong", { staticClass: "right primary-font" }, [
                 _vm._v(
-                  "\n                                    Name\n                                "
+                  "\n                                   Buyer Name\n                                "
                 )
               ])
             ]),

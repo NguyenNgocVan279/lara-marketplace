@@ -19,4 +19,17 @@ class SendMessageController extends Controller
     public function index() {
         return view('message.index');
     }
+
+    public function chatWithThisUser() {
+        $conversations = Message::where('user_id',auth()->id())
+            ->orWhere('receiver_id',auth()->id())
+            ->get();
+        $users = $conversations->map(function($conversation){
+            if($conversation->user_id===auth()->id()){
+                return $conversation->receiver;
+            }
+            return $conversation->sender;
+        })->unique();
+        return $users;
+    }
 }

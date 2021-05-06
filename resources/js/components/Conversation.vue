@@ -17,7 +17,7 @@
                             <div class="chat-body2 clearfix">
                                 <div class="header clearfix">
                                     <strong class="primary-font">
-                                        Name
+                                       Sender Name
                                     </strong>
                                     <small class="right text-muted">
                                         <span
@@ -43,7 +43,7 @@
                                         </span>
                                     </small>                                    
                                     <strong class="right primary-font">
-                                        Name
+                                       Buyer Name
                                     </strong>
                                 </div>
                                 <p>
