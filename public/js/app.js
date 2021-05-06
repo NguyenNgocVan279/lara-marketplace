@@ -2221,7 +2221,6 @@ __webpack_require__.r(__webpack_exports__);
         alert('Vui lòng viết tin nhắn');
       }
 
-      return;
       axios.post('/send/message', {
         body: this.body,
         receiverId: this.receiverId,
