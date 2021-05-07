@@ -2115,6 +2115,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39116,11 +39122,30 @@ var render = function() {
             return _c("ul", { key: index, staticClass: "chat" }, [
               message.selfOwned
                 ? _c("li", { staticClass: "sender clearfix" }, [
-                    _c("span", { staticClass: "chat-img left clearfix mx-2" }, [
-                      _vm._v(
-                        "\n                            img\n                        "
-                      )
-                    ]),
+                    message.user.avatar
+                      ? _c(
+                          "span",
+                          { staticClass: "chat-img left clearfix mx-2" },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "/storage/" +
+                                  message.user.avatar.substring(7),
+                                width: "60"
+                              }
+                            })
+                          ]
+                        )
+                      : _c(
+                          "span",
+                          { staticClass: "chat-img left clearfix mx-2" },
+                          [
+                            _c("img", {
+                              attrs: { src: "/img/man.jpg", width: "60" }
+                            })
+                          ]
+                        ),
                     _vm._v(" "),
                     _c("div", { staticClass: "chat-body2 clearfix" }, [
                       _c("div", { staticClass: "header clearfix" }, [
@@ -39178,15 +39203,30 @@ var render = function() {
                     ])
                   ])
                 : _c("li", { staticClass: "buyer clearfix" }, [
-                    _c(
-                      "span",
-                      { staticClass: "chat-img right clearfix  mx-2" },
-                      [
-                        _vm._v(
-                          "\n                            img\n                        "
+                    message.user.avatar
+                      ? _c(
+                          "span",
+                          { staticClass: "chat-img right clearfix  mx-2" },
+                          [
+                            _c("img", {
+                              attrs: {
+                                src:
+                                  "/storage/" +
+                                  message.user.avatar.substring(7),
+                                width: "60"
+                              }
+                            })
+                          ]
                         )
-                      ]
-                    ),
+                      : _c(
+                          "span",
+                          { staticClass: "chat-img right clearfix  mx-2" },
+                          [
+                            _c("img", {
+                              attrs: { src: "/img/man.jpg", width: "60" }
+                            })
+                          ]
+                        ),
                     _vm._v(" "),
                     _c("div", { staticClass: "chat-body clearfix" }, [
                       _c("div", { staticClass: "header clearfix" }, [

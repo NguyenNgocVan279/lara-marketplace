@@ -71,7 +71,8 @@
                                         @if(Auth::check()&& Auth::user()->isadmin==1)
                                         <a class="dropdown-item" href="{{ url('auth/category') }}">{{ __('Bảng điều khiển') }}</a>  
                                         @else                      
-                                        <a class="dropdown-item" href="{{ url('ads') }}">{{ __('Tin đăng') }}</a> 
+                                        <a class="dropdown-item" href="{{ url('ads') }}">{{ __('Tin đăng') }}</a>
+                                        <a class="dropdown-item" href="{{ url('messages') }}">{{ __('Tin nhắn') }}</a>  
                                         @endif                                        
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();

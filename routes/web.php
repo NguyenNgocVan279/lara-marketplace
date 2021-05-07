@@ -55,7 +55,7 @@ Route::get('/products/{id}/{slug}', 'App\Http\Controllers\FrontendController@sho
 
 // Message
 Route::post('/send/message','App\Http\Controllers\SendMessageController@store')->middleware('auth');
-Route::get('message','App\Http\Controllers\SendMessageController@index')->middleware('auth');
+Route::get('messages','App\Http\Controllers\SendMessageController@index')->middleware('auth');
 Route::get('/users','App\Http\Controllers\SendMessageController@chatWithThisUser');
 Route::get('/message/user/{id}','App\Http\Controllers\SendMessageController@showMessages');
 Route::post('/start-conversation','App\Http\Controllers\SendMessageController@startConversation');

@@ -15,7 +15,7 @@
         <a href="{{route('ads.create')}}" class="{{request()->is('ads/create')?'active':''}}">Tạo tin đăng</a>
         <a href="{{route('ads.index')}}" class="{{request()->is('ads')?'active':''}}">Tin đã đăng</a>
         <a href="#">Tin chờ duyệt</a>
-        <a href="#" class="">Hộp thư</a>
+        <a href="{{ url('messages') }}" class="{{request()->is('messages')?'active':''}}">Hộp chat</a>        
     </div>
 
 </div>
