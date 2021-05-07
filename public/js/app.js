@@ -2120,7 +2120,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       users: [],
       messages: [],
-      selectedUserId: ''
+      selectedUserId: '',
+      body: ''
     };
   },
   mounted: function mounted() {
@@ -2137,6 +2138,18 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/message/user/' + userId).then(function (response) {
         _this2.messages = response.data;
         _this2.selectedUserId = userId;
+      });
+    },
+    sendMessage: function sendMessage() {
+      var _this3 = this;
+
+      axios.post('/start-conversation', {
+        body: this.body,
+        receiverId: this.selectedUserId
+      }).then(function (response) {
+        _this3.messages.push(response.data);
+
+        _this3.body = '';
       });
     }
   }
@@ -39229,7 +39242,25 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(4)
+            _c("span", { staticClass: "input-group-btn" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.sendMessage()
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                            Send\n                        "
+                  )
+                ]
+              )
+            ])
           ])
         ])
       ])
@@ -39274,16 +39305,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "sender clearfix" }, [
       _c("span", { staticClass: "chat-img left clearfix mx-2" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "input-group-btn" }, [
-      _c("button", { staticClass: "btn btn-primary" }, [
-        _vm._v("\n                            Send\n                        ")
-      ])
     ])
   }
 ]

@@ -76,7 +76,7 @@
                             placeholder="Nhập nội dung tại đây..."
                         />
                         <span class="input-group-btn">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" @click.prevent="sendMessage()">
                                 Send
                             </button>
                         </span>
@@ -93,7 +93,8 @@ export default {
         return{
             users:[],
             messages:[],
-            selectedUserId:''
+            selectedUserId:'',
+            body:''
         }
     },
     mounted(){
@@ -106,6 +107,15 @@ export default {
             axios.get('/message/user/'+userId).then((response)=>{
                 this.messages = response.data
                 this.selectedUserId = userId
+            })
+        },
+        sendMessage(){
+            axios.post('/start-conversation',{
+                body:this.body,
+                receiverId: this.selectedUserId
+            }).then((response)=>{
+                this.messages.push(response.data);
+                this.body=''
             })
         }
     }
