@@ -2109,6 +2109,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39092,37 +39098,102 @@ var render = function() {
           { staticClass: "card-body chat-msg" },
           _vm._l(_vm.messages, function(message, index) {
             return _c("ul", { key: index, staticClass: "chat" }, [
-              _c("li", { staticClass: "sender clearfix" }, [
-                _c("span", { staticClass: "chat-img left clearfix mx-2" }, [
-                  _vm._v(
-                    "\n                            img\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "chat-body2 clearfix" }, [
-                  _c("div", { staticClass: "header clearfix" }, [
-                    _c("strong", { staticClass: "primary-font" }, [
+              message.selfOwned
+                ? _c("li", { staticClass: "sender clearfix" }, [
+                    _c("span", { staticClass: "chat-img left clearfix mx-2" }, [
                       _vm._v(
-                        "\n                                   " +
-                          _vm._s(message.user.name) +
-                          "\n                                "
+                        "\n                            img\n                        "
                       )
                     ]),
                     _vm._v(" "),
-                    _vm._m(1, true)
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                " +
-                        _vm._s(message.body) +
-                        "\n                            "
-                    )
+                    _c("div", { staticClass: "chat-body2 clearfix" }, [
+                      _c("div", { staticClass: "header clearfix" }, [
+                        _c("strong", { staticClass: "primary-font" }, [
+                          _vm._v(
+                            "\n                                   " +
+                              _vm._s(message.user.name) +
+                              "\n                                "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1, true)
+                      ]),
+                      _vm._v(" "),
+                      message.ads
+                        ? _c("p", { staticClass: "text-center" }, [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href:
+                                    "/products/" +
+                                    message.ads.id +
+                                    "/" +
+                                    message.ads.slug,
+                                  target: "_blank"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(message.ads.name) +
+                                    "\n                                    "
+                                ),
+                                _c("img", {
+                                  attrs: {
+                                    src:
+                                      "/storage/" +
+                                      message.ads.feature_image.substring(7),
+                                    width: "120"
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(message.body) +
+                            "\n                            "
+                        )
+                      ])
+                    ])
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(2, true),
+                : _c("li", { staticClass: "buyer clearfix" }, [
+                    _c(
+                      "span",
+                      { staticClass: "chat-img right clearfix  mx-2" },
+                      [
+                        _vm._v(
+                          "\n                            img\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "chat-body clearfix" }, [
+                      _c("div", { staticClass: "header clearfix" }, [
+                        _vm._m(2, true),
+                        _vm._v(" "),
+                        _c("strong", { staticClass: "right primary-font" }, [
+                          _vm._v(
+                            "\n                                   " +
+                              _vm._s(message.user.name) +
+                              "\n                                "
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(message.body) +
+                            "\n                            "
+                        )
+                      ])
+                    ])
+                  ]),
               _vm._v(" "),
               _vm._m(3, true)
             ])
@@ -39189,33 +39260,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "buyer clearfix" }, [
-      _c("span", { staticClass: "chat-img right clearfix  mx-2" }, [
-        _vm._v("\n                            img\n                        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "chat-body clearfix" }, [
-        _c("div", { staticClass: "header clearfix" }, [
-          _c("small", { staticClass: "left text-muted" }, [
-            _c("span", { staticClass: "glyphicon glyphicon-time" }, [
-              _vm._v(
-                "\n                                        date\n                                    "
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("strong", { staticClass: "right primary-font" }, [
-            _vm._v(
-              "\n                                   Buyer Name\n                                "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                                Message\n                            "
-          )
-        ])
+    return _c("small", { staticClass: "left text-muted" }, [
+      _c("span", { staticClass: "glyphicon glyphicon-time" }, [
+        _vm._v(
+          "\n                                        date\n                                    "
+        )
       ])
     ])
   },
