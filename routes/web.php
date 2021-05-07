@@ -47,6 +47,9 @@ Route::group(['prefix'=>'auth','middleware'=>'admin'], function() {
     Route::resource('/childcategory', 'App\Http\Controllers\ChildcategoryController');
 });
 
+// User ads
+Route::get('/ads/{userId}/view','App\Http\Controllers\FrontendController@viewUserAds')->name('show.user.ads');
+
 // Frontend
 Route::get('/product/{categorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnCategory')->name('category.show');
 Route::get('/product/{categorySlug}/{subcategorySlug}', 'App\Http\Controllers\FrontendController@findBasedOnSubcategory')->name('subcategory.show');

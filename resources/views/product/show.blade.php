@@ -76,7 +76,9 @@
                 @else
                     <img src="{{ Storage::url($advertisement->user->avatar)}}" width="120">
                 @endif                
-                <p>{{$advertisement->user->name}}</p>
+                <p>
+                    <a href="{{route('show.user.ads',[$advertisement->user_id])}}">{{$advertisement->user->name}}</a>   
+                </p>
                 <p>
                     @if ($advertisement->phone_number)
                         <show-phone-number :phone-number="{{ $advertisement->phone_number }}"></show-phone-number>

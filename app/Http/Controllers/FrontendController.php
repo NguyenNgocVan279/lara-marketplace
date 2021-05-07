@@ -7,6 +7,7 @@ use App\Models\Childcategory;
 use App\Models\Subcategory;
 use App\Models\Category;
 use App\Models\Advertisement;
+use App\Models\User;
 
 class FrontendController extends Controller
 {
@@ -62,9 +63,17 @@ class FrontendController extends Controller
         return view('product.childcategory',compact('advertisements','filterByChildCategories'));
     }
 
+    // show individual ads
     public function show($id, $slug) {
         $advertisement = Advertisement::where('id', $id)->where('slug', $slug)->first();
         return view('product.show', compact('advertisement'));
         
+    }
+
+    //show user ads
+    public function viewUserAds($id) {
+        $advertisements = Advertisement::where('user_id',$id)->paginate(8);
+        $user = User::find($id);
+        return view('seller.ads',compact('advertisements','user'));
     }
 }
