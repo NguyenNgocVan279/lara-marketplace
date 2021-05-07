@@ -30,7 +30,7 @@
                                         <span
                                             class="glyphicon glyphicon-time"
                                         ></span>
-                                        date
+                                        {{ moment(message.created_at).format("h:mm:ss a, DD-MM-YYYY") }}
                                     </small>
                                 </div>
                                 <p class="text-center" v-if="message.ads">
@@ -55,7 +55,7 @@
                                 <div class="header clearfix">
                                     <small class="left text-muted">
                                         <span class="glyphicon glyphicon-time">
-                                            date
+                                            {{ moment(message.created_at).format("h:mm:ss a, DD-MM-YYYY") }}
                                         </span>
                                     </small>                                    
                                     <strong class="right primary-font">
@@ -94,13 +94,15 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default {
     data(){
         return{
             users:[],
             messages:[],
             selectedUserId:'',
-            body:''
+            body:'',
+            moment:moment
         }
     },
     mounted(){
