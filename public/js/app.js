@@ -2504,30 +2504,34 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_chat_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-chat-scroll */ "./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js");
+/* harmony import */ var vue_chat_scroll__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_chat_scroll__WEBPACK_IMPORTED_MODULE_1__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //import vue
 
 
 
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"); //register component
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('image-preview', __webpack_require__(/*! ./components/imagepreview/FeatureImage.vue */ "./resources/js/components/imagepreview/FeatureImage.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('first-image', __webpack_require__(/*! ./components/imagepreview/FirstImage.vue */ "./resources/js/components/imagepreview/FirstImage.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('second-image', __webpack_require__(/*! ./components/imagepreview/SecondImage.vue */ "./resources/js/components/imagepreview/SecondImage.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('third-image', __webpack_require__(/*! ./components/imagepreview/ThirdImage.vue */ "./resources/js/components/imagepreview/ThirdImage.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('forth-image', __webpack_require__(/*! ./components/imagepreview/ForthImage.vue */ "./resources/js/components/imagepreview/ForthImage.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('category-dropdown', __webpack_require__(/*! ./components/CategoryDropDown.vue */ "./resources/js/components/CategoryDropDown.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('address-dropdown', __webpack_require__(/*! ./components/AddressDropDown.vue */ "./resources/js/components/AddressDropDown.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('message', __webpack_require__(/*! ./components/Message.vue */ "./resources/js/components/Message.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('conversation', __webpack_require__(/*! ./components/Conversation.vue */ "./resources/js/components/Conversation.vue").default);
-vue__WEBPACK_IMPORTED_MODULE_1__.default.component('show-phone-number', __webpack_require__(/*! ./components/ShowPhoneNumber.vue */ "./resources/js/components/ShowPhoneNumber.vue").default); //initialize vue
+vue__WEBPACK_IMPORTED_MODULE_2__.default.use((vue_chat_scroll__WEBPACK_IMPORTED_MODULE_1___default())); //register component
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('image-preview', __webpack_require__(/*! ./components/imagepreview/FeatureImage.vue */ "./resources/js/components/imagepreview/FeatureImage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('first-image', __webpack_require__(/*! ./components/imagepreview/FirstImage.vue */ "./resources/js/components/imagepreview/FirstImage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('second-image', __webpack_require__(/*! ./components/imagepreview/SecondImage.vue */ "./resources/js/components/imagepreview/SecondImage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('third-image', __webpack_require__(/*! ./components/imagepreview/ThirdImage.vue */ "./resources/js/components/imagepreview/ThirdImage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('forth-image', __webpack_require__(/*! ./components/imagepreview/ForthImage.vue */ "./resources/js/components/imagepreview/ForthImage.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('category-dropdown', __webpack_require__(/*! ./components/CategoryDropDown.vue */ "./resources/js/components/CategoryDropDown.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('address-dropdown', __webpack_require__(/*! ./components/AddressDropDown.vue */ "./resources/js/components/AddressDropDown.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('message', __webpack_require__(/*! ./components/Message.vue */ "./resources/js/components/Message.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('conversation', __webpack_require__(/*! ./components/Conversation.vue */ "./resources/js/components/Conversation.vue").default);
+vue__WEBPACK_IMPORTED_MODULE_2__.default.component('show-phone-number', __webpack_require__(/*! ./components/ShowPhoneNumber.vue */ "./resources/js/components/ShowPhoneNumber.vue").default); //initialize vue
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_2__.default({
   el: '#app'
 });
 
@@ -38069,6 +38073,99 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/vue-chat-scroll/dist/vue-chat-scroll.js ***!
+  \**************************************************************/
+/***/ (function(module) {
+
+(function (global, factory) {
+   true ? module.exports = factory() :
+  0;
+}(this, (function () { 'use strict';
+
+  /**
+  * @name VueJS vChatScroll (vue-chat-scroll)
+  * @description Monitors an element and scrolls to the bottom if a new child is added
+  * @author Theodore Messinezis <theo@theomessin.com>
+  * @file v-chat-scroll  directive definition
+  */
+  var scrollToBottom = function scrollToBottom(el, smooth) {
+    if (typeof el.scroll === "function") {
+      el.scroll({
+        top: el.scrollHeight,
+        behavior: smooth ? 'smooth' : 'instant'
+      });
+    } else {
+      el.scrollTop = el.scrollHeight;
+    }
+  };
+
+  var vChatScroll = {
+    bind: function bind(el, binding) {
+      var scrolled = false;
+      el.addEventListener('scroll', function (e) {
+        scrolled = el.scrollTop + el.clientHeight + 1 < el.scrollHeight;
+
+        if (scrolled && el.scrollTop === 0) {
+          el.dispatchEvent(new Event("v-chat-scroll-top-reached"));
+        }
+      });
+      new MutationObserver(function (e) {
+        var config = binding.value || {};
+        if (config.enabled === false) return;
+        var pause = config.always === false && scrolled;
+        var addedNodes = e[e.length - 1].addedNodes.length;
+        var removedNodes = e[e.length - 1].removedNodes.length;
+
+        if (config.scrollonremoved) {
+          if (pause || addedNodes != 1 && removedNodes != 1) return;
+        } else {
+          if (pause || addedNodes != 1) return;
+        }
+
+        var smooth = config.smooth;
+        var loadingRemoved = !addedNodes && removedNodes === 1;
+
+        if (loadingRemoved && config.scrollonremoved && 'smoothonremoved' in config) {
+          smooth = config.smoothonremoved;
+        }
+
+        scrollToBottom(el, smooth);
+      }).observe(el, {
+        childList: true,
+        subtree: true
+      });
+    },
+    inserted: function inserted(el, binding) {
+      var config = binding.value || {};
+      scrollToBottom(el, config.notSmoothOnInit ? false : config.smooth);
+    }
+  };
+
+  /**
+  * @name VueJS vChatScroll (vue-chat-scroll)
+  * @description Monitors an element and scrolls to the bottom if a new child is added
+  * @author Theodore Messinezis <theo@theomessin.com>
+  * @file vue-chat-scroll plugin definition
+  */
+  var VueChatScroll = {
+    install: function install(Vue, options) {
+      Vue.directive('chat-scroll', vChatScroll);
+    }
+  };
+
+  if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(VueChatScroll);
+  }
+
+  return VueChatScroll;
+
+})));
+
+
+/***/ }),
+
 /***/ "./resources/js/components/AddressDropDown.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/AddressDropDown.vue ***!
@@ -39242,7 +39339,18 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "card-body chat-msg" },
+          {
+            directives: [
+              {
+                name: "chat-scroll",
+                rawName: "v-chat-scroll",
+                value: { always: false, smooth: true, scrollonremoved: true },
+                expression:
+                  "{always: false, smooth: true, scrollonremoved:true}"
+              }
+            ],
+            staticClass: "card-body chat-msg"
+          },
           _vm._l(_vm.messages, function(message, index) {
             return _c("ul", { key: index, staticClass: "chat" }, [
               message.selfOwned

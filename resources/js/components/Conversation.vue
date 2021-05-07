@@ -12,7 +12,7 @@
                 <div class="card-header text-center">
                     <span>Chat </span>
                 </div>
-                <div class="card-body chat-msg">
+                <div class="card-body chat-msg" v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}">
                     <ul class="chat" v-for="(message,index) in messages" :key="index">
                         <li class="sender clearfix" v-if="message.selfOwned">
                             <span class="chat-img left clearfix mx-2" v-if="message.user.avatar">

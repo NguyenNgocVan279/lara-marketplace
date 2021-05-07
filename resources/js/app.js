@@ -7,6 +7,9 @@ import axios from 'axios';
 window.Vue = require('vue');
 window.axios = require('axios');
 
+import VueChatScroll from 'vue-chat-scroll'
+Vue.use(VueChatScroll)
+
 //register component
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('image-preview', require('./components/imagepreview/FeatureImage.vue').default);
