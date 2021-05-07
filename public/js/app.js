@@ -2233,12 +2233,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['sellerName', 'userId', 'receiverId', 'adId'],
   data: function data() {
     return {
       body: "",
-      successMessage: false
+      successMessage: false,
+      showViewConversationOnSuccess: true
     };
   },
   methods: {
@@ -2256,7 +2268,7 @@ __webpack_require__.r(__webpack_exports__);
         adId: this.adId
       }).then(function (response) {
         _this.body = '';
-        _this.successMessage = true;
+        _this.successMessage = true, _this.showViewConversationOnSuccess = false;
       });
     }
   }
@@ -39399,18 +39411,22 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-danger",
-        attrs: {
-          type: "button",
-          "data-toggle": "modal",
-          "data-target": "#staticBackdrop"
-        }
-      },
-      [_vm._v("\n        Chat trực tiếp\n    ")]
-    ),
+    _vm.showViewConversationOnSuccess
+      ? _c("p", [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-danger",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#staticBackdrop"
+              }
+            },
+            [_vm._v("\n            Gửi tin nhắn\n        ")]
+          )
+        ])
+      : _c("p", [_vm._m(0)]),
     _vm._v(" "),
     _c(
       "div",
@@ -39448,7 +39464,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(0)
+              _vm._m(1)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
@@ -39513,6 +39529,18 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/messages" } }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-success", attrs: { type: "button" } },
+        [_vm._v("\n                Xem hộp chat\n            ")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

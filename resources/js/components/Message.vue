@@ -1,9 +1,20 @@
 <template>
     <div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
-            Chat trực tiếp
-        </button>
+        <p v-if="showViewConversationOnSuccess">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+                Gửi tin nhắn
+            </button>
+        </p>
+        <p v-else>
+            <!-- Button trigger modal -->
+            <a href="/messages">
+                <button type="button" class="btn btn-success">
+                    Xem hộp chat
+                </button>
+            </a>            
+        </p>
+        
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -39,7 +50,8 @@ export default {
     data(){
         return{
             body:"",
-            successMessage:false
+            successMessage:false,
+            showViewConversationOnSuccess:true
         }
     },
     methods:{
@@ -56,7 +68,8 @@ export default {
                 adId:this.adId
             }).then((response)=>{
                 this.body=''
-                this.successMessage=true
+                this.successMessage=true,
+                this.showViewConversationOnSuccess=false
             })
         }
     }
