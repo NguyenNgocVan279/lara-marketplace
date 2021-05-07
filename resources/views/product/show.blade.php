@@ -76,7 +76,13 @@
                 @else
                     <img src="{{ Storage::url($advertisement->user->avatar)}}" width="120">
                 @endif                
-                <p>{{$advertisement->user->name}} <br>
+                <p>{{$advertisement->user->name}}</p>
+                <p>
+                    @if ($advertisement->phone_number)
+                        <show-phone-number :phone-number="{{ $advertisement->phone_number }}"></show-phone-number>
+                    @endif
+                </p>
+                <p>
                     <span>
                         @if (Auth()->check())
                             @if(auth()->user()->id!=$advertisement->user_id)
@@ -87,9 +93,9 @@
                                 ></message>
                             @endif
                         @else
-                           <button class="btn btn-danger">Đăng nhập để chat</button> 
+                           <button class="btn btn-danger">Chat với người bán</button> 
                         @endif                        
-                    </span>                    
+                    </span>           
                 </p>
                 
             </div>
