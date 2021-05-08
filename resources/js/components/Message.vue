@@ -59,6 +59,7 @@ export default {
         {
             if(this.body==''){
                 alert('Vui lòng viết tin nhắn')
+                return
             }
             
             axios.post('/send/message',{
