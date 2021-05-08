@@ -2123,6 +2123,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2155,6 +2164,16 @@ __webpack_require__.r(__webpack_exports__);
     },
     sendMessage: function sendMessage() {
       var _this3 = this;
+
+      if (this.body == '') {
+        alert('Vui lòng điền nôi dung chat.');
+        return;
+      }
+
+      if (this.selectedUserId == '') {
+        alert('Vui lòng chọn thành viên để chat.');
+        return;
+      }
 
       axios.post('/start-conversation', {
         body: this.body,
@@ -2263,6 +2282,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.body == '') {
         alert('Vui lòng viết tin nhắn');
+        return;
       }
 
       axios.post('/send/message', {
@@ -60749,6 +60769,23 @@ var render = function() {
       { staticClass: "col-md-2" },
       _vm._l(_vm.users, function(user, index) {
         return _c("p", { key: index }, [
+          user.avatar
+            ? _c("span", [
+                _c("img", {
+                  staticStyle: { "border-radius": "50%" },
+                  attrs: {
+                    src: "/storage/" + user.avatar.substring(7),
+                    width: "60"
+                  }
+                })
+              ])
+            : _c("span", [
+                _c("img", {
+                  staticStyle: { "border-radius": "50%" },
+                  attrs: { src: "/img/man.jpg", width: "60" }
+                })
+              ]),
+          _vm._v(" "),
           _c(
             "a",
             {
@@ -60760,11 +60797,7 @@ var render = function() {
                 }
               }
             },
-            [
-              _vm._v(
-                "\n                " + _vm._s(user.name) + "\n            "
-              )
-            ]
+            [_c("p", [_vm._v(_vm._s(user.name))])]
           )
         ])
       }),
@@ -60775,11 +60808,11 @@ var render = function() {
       _c("div", { staticClass: "card" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            directives: [
+        _vm.selectedUserId
+          ? _c(
+              "div",
               {
+<<<<<<< HEAD
                 name: "chat-scroll",
                 rawName: "v-chat-scroll",
                 value: { always: false, smooth: true, scrollonremoved: true },
@@ -60865,22 +60898,43 @@ var render = function() {
                                   target: "_blank"
                                 }
                               },
+=======
+                directives: [
+                  {
+                    name: "chat-scroll",
+                    rawName: "v-chat-scroll",
+                    value: {
+                      always: false,
+                      smooth: true,
+                      scrollonremoved: true
+                    },
+                    expression:
+                      "{always: false, smooth: true, scrollonremoved:true}"
+                  }
+                ],
+                staticClass: "card-body chat-msg"
+              },
+              _vm._l(_vm.messages, function(message, index) {
+                return _c("ul", { key: index, staticClass: "chat" }, [
+                  message.selfOwned
+                    ? _c("li", { staticClass: "sender clearfix" }, [
+                        message.user.avatar
+                          ? _c(
+                              "span",
+                              { staticClass: "chat-img left clearfix mx-2" },
+>>>>>>> c671f015a42758ffdda703578d2cee72c134c09b
                               [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(message.ads.name) +
-                                    "\n                                    "
-                                ),
                                 _c("img", {
                                   attrs: {
                                     src:
                                       "/storage/" +
-                                      message.ads.feature_image.substring(7),
-                                    width: "120"
+                                      message.user.avatar.substring(7),
+                                    width: "60"
                                   }
                                 })
                               ]
                             )
+<<<<<<< HEAD
                           ])
                         : _vm._e(),
                       _vm._v(" "),
@@ -60933,43 +60987,167 @@ var render = function() {
                             "span",
                             { staticClass: "glyphicon glyphicon-time" },
                             [
+=======
+                          : _c(
+                              "span",
+                              { staticClass: "chat-img left clearfix mx-2" },
+                              [
+                                _c("img", {
+                                  attrs: { src: "/img/man.jpg", width: "60" }
+                                })
+                              ]
+                            ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "chat-body2 clearfix" }, [
+                          _c("div", { staticClass: "header clearfix" }, [
+                            _c("strong", { staticClass: "primary-font" }, [
+>>>>>>> c671f015a42758ffdda703578d2cee72c134c09b
                               _vm._v(
-                                "\n                                        " +
+                                "\n                                   " +
+                                  _vm._s(message.user.name) +
+                                  "\n                                "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("small", { staticClass: "right text-muted" }, [
+                              _c("span", {
+                                staticClass: "glyphicon glyphicon-time"
+                              }),
+                              _vm._v(
+                                "\n                                    " +
                                   _vm._s(
                                     _vm
                                       .moment(message.created_at)
                                       .format("h:mm:ss a, DD-MM-YYYY")
                                   ) +
-                                  "\n                                    "
+                                  "\n                                "
                               )
-                            ]
-                          )
-                        ]),
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          message.ads
+                            ? _c("p", { staticClass: "text-center" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href:
+                                        "/products/" +
+                                        message.ads.id +
+                                        "/" +
+                                        message.ads.slug,
+                                      target: "_blank"
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(message.ads.name) +
+                                        "\n                                    "
+                                    ),
+                                    _c("img", {
+                                      attrs: {
+                                        src:
+                                          "/storage/" +
+                                          message.ads.feature_image.substring(
+                                            7
+                                          ),
+                                        width: "120"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(message.body) +
+                                "\n                            "
+                            )
+                          ])
+                        ])
+                      ])
+                    : _c("li", { staticClass: "buyer clearfix" }, [
+                        message.user.avatar
+                          ? _c(
+                              "span",
+                              { staticClass: "chat-img right clearfix  mx-2" },
+                              [
+                                _c("img", {
+                                  attrs: {
+                                    src:
+                                      "/storage/" +
+                                      message.user.avatar.substring(7),
+                                    width: "60"
+                                  }
+                                })
+                              ]
+                            )
+                          : _c(
+                              "span",
+                              { staticClass: "chat-img right clearfix  mx-2" },
+                              [
+                                _c("img", {
+                                  attrs: { src: "/img/man.jpg", width: "60" }
+                                })
+                              ]
+                            ),
                         _vm._v(" "),
-                        _c("strong", { staticClass: "right primary-font" }, [
-                          _vm._v(
-                            "\n                                   " +
-                              _vm._s(message.user.name) +
-                              "\n                                "
-                          )
+                        _c("div", { staticClass: "chat-body clearfix" }, [
+                          _c("div", { staticClass: "header clearfix" }, [
+                            _c("small", { staticClass: "left text-muted" }, [
+                              _c(
+                                "span",
+                                { staticClass: "glyphicon glyphicon-time" },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(
+                                        _vm
+                                          .moment(message.created_at)
+                                          .format("h:mm:ss a, DD-MM-YYYY")
+                                      ) +
+                                      "\n                                    "
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "strong",
+                              { staticClass: "right primary-font" },
+                              [
+                                _vm._v(
+                                  "\n                                   " +
+                                    _vm._s(message.user.name) +
+                                    "\n                                "
+                                )
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "\n                                " +
+                                _vm._s(message.body) +
+                                "\n                            "
+                            )
+                          ])
                         ])
                       ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(message.body) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
-                  ]),
-              _vm._v(" "),
-              _vm._m(1, true)
-            ])
-          }),
-          0
-        ),
+                  _vm._v(" "),
+                  _vm._m(1, true)
+                ])
+              }),
+              0
+            )
+          : _c("div", { staticStyle: { "min-height": "250px" } }, [
+              _c("p", { staticClass: "text-center" }, [
+                _vm._v("Vui lòng chọn thành viên để chat.")
+              ])
+            ]),
         _vm._v(" "),
         _c("div", { staticClass: "card-footer" }, [
           _c("div", { staticClass: "input-group" }, [
