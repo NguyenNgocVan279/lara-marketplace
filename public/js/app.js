@@ -60812,93 +60812,6 @@ var render = function() {
           ? _c(
               "div",
               {
-<<<<<<< HEAD
-                name: "chat-scroll",
-                rawName: "v-chat-scroll",
-                value: { always: false, smooth: true, scrollonremoved: true },
-                expression:
-                  "{always: false, smooth: true, scrollonremoved:true}"
-              }
-            ],
-            staticClass: "card-body chat-msg"
-          },
-          _vm._l(_vm.messages, function(message, index) {
-            return _c("ul", { key: index, staticClass: "chat" }, [
-              message.selfOwned
-                ? _c("li", { staticClass: "sender clearfix" }, [
-                    message.user.avatar
-                      ? _c(
-                          "span",
-                          { staticClass: "chat-img left clearfix mx-2" },
-                          [
-                            _c("img", {
-                              staticStyle: { "border-radius": "50%" },
-                              attrs: {
-                                src:
-                                  "/storage/" +
-                                  message.user.avatar.substring(7),
-                                width: "50",
-                                height: "50"
-                              }
-                            })
-                          ]
-                        )
-                      : _c(
-                          "span",
-                          { staticClass: "chat-img left clearfix mx-2" },
-                          [
-                            _c("img", {
-                              staticStyle: { "border-radius": "50%" },
-                              attrs: {
-                                src: "/img/man.jpg",
-                                width: "50",
-                                height: "50"
-                              }
-                            })
-                          ]
-                        ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat-body2 clearfix" }, [
-                      _c("div", { staticClass: "header clearfix" }, [
-                        _c("strong", { staticClass: "primary-font" }, [
-                          _vm._v(
-                            "\n                                   " +
-                              _vm._s(message.user.name) +
-                              "\n                                "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("small", { staticClass: "right text-muted" }, [
-                          _c("span", {
-                            staticClass: "glyphicon glyphicon-time"
-                          }),
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(
-                                _vm
-                                  .moment(message.created_at)
-                                  .format("h:mm:ss a, DD-MM-YYYY")
-                              ) +
-                              "\n                                "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      message.ads
-                        ? _c("p", { staticClass: "text-center" }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href:
-                                    "/products/" +
-                                    message.ads.id +
-                                    "/" +
-                                    message.ads.slug,
-                                  target: "_blank"
-                                }
-                              },
-=======
                 directives: [
                   {
                     name: "chat-scroll",
@@ -60922,78 +60835,30 @@ var render = function() {
                           ? _c(
                               "span",
                               { staticClass: "chat-img left clearfix mx-2" },
->>>>>>> c671f015a42758ffdda703578d2cee72c134c09b
                               [
                                 _c("img", {
+                                  staticStyle: { "border-radius": "50%" },
                                   attrs: {
                                     src:
                                       "/storage/" +
                                       message.user.avatar.substring(7),
-                                    width: "60"
+                                    width: "50",
+                                    height: "50"
                                   }
                                 })
                               ]
                             )
-<<<<<<< HEAD
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                                " +
-                            _vm._s(message.body) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
-                  ])
-                : _c("li", { staticClass: "buyer clearfix" }, [
-                    message.user.avatar
-                      ? _c(
-                          "span",
-                          { staticClass: "chat-img right clearfix  mx-2" },
-                          [
-                            _c("img", {
-                              staticStyle: { "border-radius": "50%" },
-                              attrs: {
-                                src:
-                                  "/storage/" +
-                                  message.user.avatar.substring(7),
-                                width: "50",
-                                height: "50"
-                              }
-                            })
-                          ]
-                        )
-                      : _c(
-                          "span",
-                          { staticClass: "chat-img right clearfix  mx-2" },
-                          [
-                            _c("img", {
-                              staticStyle: { "border-radius": "50%" },
-                              attrs: {
-                                src: "/img/man.jpg",
-                                width: "50",
-                                height: "50"
-                              }
-                            })
-                          ]
-                        ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "chat-body clearfix" }, [
-                      _c("div", { staticClass: "header clearfix" }, [
-                        _c("small", { staticClass: "left text-muted" }, [
-                          _c(
-                            "span",
-                            { staticClass: "glyphicon glyphicon-time" },
-                            [
-=======
                           : _c(
                               "span",
                               { staticClass: "chat-img left clearfix mx-2" },
                               [
                                 _c("img", {
-                                  attrs: { src: "/img/man.jpg", width: "60" }
+                                  staticStyle: { "border-radius": "50%" },
+                                  attrs: {
+                                    src: "/img/man.jpg",
+                                    width: "50",
+                                    height: "50"
+                                  }
                                 })
                               ]
                             ),
@@ -61001,7 +60866,6 @@ var render = function() {
                         _c("div", { staticClass: "chat-body2 clearfix" }, [
                           _c("div", { staticClass: "header clearfix" }, [
                             _c("strong", { staticClass: "primary-font" }, [
->>>>>>> c671f015a42758ffdda703578d2cee72c134c09b
                               _vm._v(
                                 "\n                                   " +
                                   _vm._s(message.user.name) +
@@ -61076,11 +60940,13 @@ var render = function() {
                               { staticClass: "chat-img right clearfix  mx-2" },
                               [
                                 _c("img", {
+                                  staticStyle: { "border-radius": "50%" },
                                   attrs: {
                                     src:
                                       "/storage/" +
                                       message.user.avatar.substring(7),
-                                    width: "60"
+                                    width: "50",
+                                    height: "50"
                                   }
                                 })
                               ]
@@ -61090,7 +60956,12 @@ var render = function() {
                               { staticClass: "chat-img right clearfix  mx-2" },
                               [
                                 _c("img", {
-                                  attrs: { src: "/img/man.jpg", width: "60" }
+                                  staticStyle: { "border-radius": "50%" },
+                                  attrs: {
+                                    src: "/img/man.jpg",
+                                    width: "50",
+                                    height: "50"
+                                  }
                                 })
                               ]
                             ),
@@ -61269,21 +61140,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm.showViewConversationOnSuccess
-      ? _c("p", [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-danger",
-              attrs: {
-                type: "button",
-                "data-toggle": "modal",
-                "data-target": "#staticBackdrop"
-              }
-            },
-            [_vm._v("\n            Gửi tin nhắn\n        ")]
-          )
-        ])
-      : _c("p", [_vm._m(0)]),
+      ? _c("p", [_vm._m(0)])
+      : _c("p", [_vm._m(1)]),
     _vm._v(" "),
     _c(
       "div",
@@ -61321,7 +61179,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(2)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
@@ -61390,11 +61248,34 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-danger",
+        attrs: {
+          type: "button",
+          "data-toggle": "modal",
+          "data-target": "#staticBackdrop"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-comments" }),
+        _vm._v(" Chat với người bán\n        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("a", { attrs: { href: "/messages" } }, [
       _c(
         "button",
         { staticClass: "btn btn-success", attrs: { type: "button" } },
-        [_vm._v("\n                Xem hộp chat\n            ")]
+        [
+          _c("i", { staticClass: "fas fa-paper-plane" }),
+          _vm._v(" Xem hộp chat\n            ")
+        ]
       )
     ])
   },
@@ -61452,7 +61333,10 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Hiển thị số Phone")]
+            [
+              _c("i", { staticClass: "fas fa-phone" }),
+              _vm._v(" Hiển thị số Phone")
+            ]
           )
         : _vm._e()
     ]),

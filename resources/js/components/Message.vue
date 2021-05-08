@@ -3,14 +3,14 @@
         <p v-if="showViewConversationOnSuccess">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
-                Gửi tin nhắn
+                <i class="fas fa-comments"></i> Chat với người bán
             </button>
         </p>
         <p v-else>
             <!-- Button trigger modal -->
             <a href="/messages">
                 <button type="button" class="btn btn-success">
-                    Xem hộp chat
+                    <i class="fas fa-paper-plane"></i> Xem hộp chat
                 </button>
             </a>            
         </p>
