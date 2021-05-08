@@ -22,6 +22,7 @@ class User extends Authenticatable
         'password',
         'address', //bổ sung khi xây dựng user profile update
         'avatar', //bổ sung khi xây dựng user profile update
+        'fb_id', // bổ sung khi xây dựng chức năng đăng nhập bằng facebook
     ];
 
     /**
