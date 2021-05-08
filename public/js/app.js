@@ -60799,11 +60799,13 @@ var render = function() {
                           { staticClass: "chat-img left clearfix mx-2" },
                           [
                             _c("img", {
+                              staticStyle: { "border-radius": "50%" },
                               attrs: {
                                 src:
                                   "/storage/" +
                                   message.user.avatar.substring(7),
-                                width: "60"
+                                width: "50",
+                                height: "50"
                               }
                             })
                           ]
@@ -60813,7 +60815,12 @@ var render = function() {
                           { staticClass: "chat-img left clearfix mx-2" },
                           [
                             _c("img", {
-                              attrs: { src: "/img/man.jpg", width: "60" }
+                              staticStyle: { "border-radius": "50%" },
+                              attrs: {
+                                src: "/img/man.jpg",
+                                width: "50",
+                                height: "50"
+                              }
                             })
                           ]
                         ),
@@ -60893,11 +60900,13 @@ var render = function() {
                           { staticClass: "chat-img right clearfix  mx-2" },
                           [
                             _c("img", {
+                              staticStyle: { "border-radius": "50%" },
                               attrs: {
                                 src:
                                   "/storage/" +
                                   message.user.avatar.substring(7),
-                                width: "60"
+                                width: "50",
+                                height: "50"
                               }
                             })
                           ]
@@ -60907,7 +60916,12 @@ var render = function() {
                           { staticClass: "chat-img right clearfix  mx-2" },
                           [
                             _c("img", {
-                              attrs: { src: "/img/man.jpg", width: "60" }
+                              staticStyle: { "border-radius": "50%" },
+                              attrs: {
+                                src: "/img/man.jpg",
+                                width: "50",
+                                height: "50"
+                              }
                             })
                           ]
                         ),

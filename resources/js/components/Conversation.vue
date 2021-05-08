@@ -16,10 +16,10 @@
                     <ul class="chat" v-for="(message,index) in messages" :key="index">
                         <li class="sender clearfix" v-if="message.selfOwned">
                             <span class="chat-img left clearfix mx-2" v-if="message.user.avatar">
-                                <img :src=" '/storage/'+ (message.user.avatar.substring(7))" width="60">
+                                <img :src=" '/storage/'+ (message.user.avatar.substring(7))" width="50" height="50" style="border-radius:50%;">
                             </span>
                             <span class="chat-img left clearfix mx-2" v-else>
-                               <img :src=" '/img/man.jpg'" width="60">
+                               <img :src=" '/img/man.jpg'" width="50" height="50" style="border-radius:50%;">
                             </span>
                             <div class="chat-body2 clearfix">
                                 <div class="header clearfix">
@@ -46,10 +46,10 @@
                         </li>
                         <li class="buyer clearfix" v-else>
                             <span class="chat-img right clearfix  mx-2" v-if="message.user.avatar">
-                                <img :src=" '/storage/'+ (message.user.avatar.substring(7))" width="60">
+                                <img :src=" '/storage/'+ (message.user.avatar.substring(7))" width="50" height="50" style="border-radius:50%;">
                             </span>
                              <span class="chat-img right clearfix  mx-2" v-else>
-                                <img :src=" '/img/man.jpg'" width="60">
+                                <img :src=" '/img/man.jpg'" width="50" height="50" style="border-radius:50%;">
                             </span>
                             <div class="chat-body clearfix">
                                 <div class="header clearfix">
