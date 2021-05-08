@@ -63,3 +63,7 @@ Route::get('/users','App\Http\Controllers\SendMessageController@chatWithThisUser
 Route::get('/message/user/{id}','App\Http\Controllers\SendMessageController@showMessages');
 Route::post('/start-conversation','App\Http\Controllers\SendMessageController@startConversation');
 
+//Login with facebook
+Route::get('auth/facebook', 'App\Http\Controllers\SocialLoginController@facebookRedirect');
+Route::get('auth/facebook/callback', 'App\Http\Controllers\SocialLoginController@loginWithFacebook');
+

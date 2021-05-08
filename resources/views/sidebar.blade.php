@@ -2,10 +2,13 @@
     <div class="card-body ">
         @if (!auth()->user()->avatar)
             <img class="mx-auto d-block img-thumbnail" src="/img/man.jpg" width="130">
-        @else
+        @endif
+        @if(auth()->user()->avatar && !auth()->user()->fb_id)
             <img src="{{ Storage::url(auth()->user()->avatar) }}" style="width:100%;" >
         @endif
-        
+        @if(auth()->user()->fb_id)
+        <img src="{{auth()->user()->avatar}}" style="width:100%;" >
+        @endif        
         <p class="text-center"><b>{{ auth()->user()->name }}</b></p>
     </div>
     <hr style="border:2px solid pink;">
