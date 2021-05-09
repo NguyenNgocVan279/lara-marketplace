@@ -16,4 +16,10 @@ class FraudController extends Controller
        ]);
        return back()->with('message','Báo cáo của bạn đã được ghi nhận. Cảm ơn bạn rất nhiều.');
     }
+
+    //for admin section
+    public function index() {
+        $ads = Fraud::paginate(20);
+        return view('backend.fraud.index', compact('ads'));
+    }
 }
