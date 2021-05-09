@@ -103,6 +103,11 @@
                 </p>
                 <p>
                     <span>
+                        @if (Session::has('message'))
+                            <div class="alert alert-success">
+                                {{ Session::get('message') }}
+                            </div>
+                        @endif
                         <a href="" data-toggle="modal" data-target="#exampleModal">Báo cáo tin đăng này</a>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -118,7 +123,8 @@
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <label>Chọn lý do</label>
-                                            <select class="form-control" name="reason">
+                                            <select class="form-control" name="reason" required>
+                                                <option value="">Vui lòng chọn</option>
                                                 <option value="Fraud">Tin giả</option>
                                                 <option value="Duplicate">Trùng tin</option>
                                                 <option value="Spam">Spam</option>

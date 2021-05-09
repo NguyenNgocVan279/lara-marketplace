@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Fraud extends Model
 {
     use HasFactory;
+    protected $fillable=['reason','message','email','ad_id'];
 }
