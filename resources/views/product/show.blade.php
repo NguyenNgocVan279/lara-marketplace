@@ -97,7 +97,51 @@
                         @else
                            <button class="btn btn-danger">Chat với người bán</button> 
                         @endif                        
-                    </span>           
+                    </span>
+                    
+                    
+                </p>
+                <p>
+                    <span>
+                        <a href="" data-toggle="modal" data-target="#exampleModal">Báo cáo tin đăng này</a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Báo cáo tin đăng giả mạo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Chọn lý do</label>
+                                        <select class="form-control" name="reason">
+                                            <option value="Fraud">Tin giả</option>
+                                            <option value="Duplicate">Trùng tin</option>
+                                            <option value="Spam">Spam</option>
+                                            <option value="Wrong-category">Sai danh mục</option>
+                                            <option value="Offensive">Phản cảm</option>
+                                            <option value="Other">Khác</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email của bạn</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nội dung</label>
+                                        <textarea name="message" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Báo cáo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
                 </p>
                 
             </div>
