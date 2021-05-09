@@ -14,8 +14,10 @@
                                         <tr>
                                             <th>Người đăng</th>
                                             <th>Hình ảnh</th>
-                                            <th>Tên tin đăng</th>
+                                            <th>Tên tin đăng</th>                                            
                                             <th>Đường dẫn</th>
+                                            <th>Ngày đăng</th>
+                                            <th>Ngày cập nhật</th>
                                             <th>Xem</th>
                                             {{-- <th>Sửa</th> --}}
                                             <th>Xóa</th>
@@ -35,6 +37,8 @@
                                                 <td><img src="{{ Storage::url($ad->feature_image)}}" alt="{{$ad->slug}}"></td>
                                                 <td>{{ $ad->name}}</td>
                                                 <td>{{ $ad->slug}}</td>
+                                                <td>{{ $ad->created_at->format('Y-m-d') }}</td>
+                                                <td>{{ $ad->updated_at->format('Y-m-d') }}</td>
                                                 <td>
                                                     <a href="{{ route('product.view',[$ad->id,$ad->slug]) }}" target="_blank">
                                                         <button class="btn btn-primary">Xem</button>
