@@ -12,6 +12,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
+                                            <th>Người đăng</th>
                                             <th>Hình ảnh</th>
                                             <th>Tên tin đăng</th>
                                             <th>Đường dẫn</th>
@@ -23,6 +24,14 @@
                                     <tbody>
                                         @forelse($ads as $ad)
                                             <tr>
+                                                <td>
+                                                    @if ($ad->user->avatar)
+                                                        <img src="{{ Storage::url($ad->user->avatar) }}" width="120">
+                                                    @else
+                                                        <img src="/img/man.jpg" width="120">
+                                                    @endif
+                                                    <a href="{{ route('show.user.ads',$ad->user->id) }}" target="_blank">{{ $ad->user->name }}</a>
+                                                </td>
                                                 <td><img src="{{ Storage::url($ad->feature_image)}}" alt="{{$ad->slug}}"></td>
                                                 <td>{{ $ad->name}}</td>
                                                 <td>{{ $ad->slug}}</td>
