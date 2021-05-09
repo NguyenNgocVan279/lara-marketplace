@@ -45,7 +45,7 @@
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModal{{$ad->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
-                                                            <form action="#" method="post">@csrf
+                                                            <form action="{{ route('ads.destroy',$ad->id) }}" method="post">@csrf
                                                             @method('DELETE')
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
@@ -74,9 +74,10 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
-            </div>
-        </div>
+                {{ $ads->links() }}
+            </div>            
+        </div>        
     </div>
 @endsection
