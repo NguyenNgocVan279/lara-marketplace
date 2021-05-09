@@ -47,7 +47,7 @@ Route::group(['prefix'=>'auth','middleware'=>'admin'], function() {
     Route::resource('/childcategory', 'App\Http\Controllers\ChildcategoryController');
     
     //admin listing
-    Route::get('/allads','App\Http\Controllers\AdminListingController@index');
+    Route::get('/allads','App\Http\Controllers\AdminListingController@index')->name('all.ads');
 });
 
 // User ads

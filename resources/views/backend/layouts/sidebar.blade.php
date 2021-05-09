@@ -53,10 +53,11 @@
             </div>
           </li>
           <!--End Danh mục cháu-->
+          <!--Hiển thị tất cả tin đăng-->
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{ route('all.ads') }}">
               <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Tất cả tin đăng</span>
             </a>
           </li>
           <li class="nav-item">
