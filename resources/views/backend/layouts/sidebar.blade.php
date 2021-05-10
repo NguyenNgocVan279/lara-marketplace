@@ -61,9 +61,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="{{route('all.reported.ads')}}">
               <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Tin đăng bị báo cáo</span>
             </a>
           </li>
           <li class="nav-item">
