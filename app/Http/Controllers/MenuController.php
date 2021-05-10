@@ -11,7 +11,9 @@ class MenuController extends Controller
     public function menu() {
         //$menus = Category::with('subcategories')->get();    //Đã khai báo View::composer trong file AppServiceProvider.php   
         //return view('index', compact('menus'));
-        
+      
+        /*  
+        Nội dung này được chuyển sang file FrontAdscontroller.php - sử dụng scope - 10/05/2021
         $category = Category::where('slug','nha-dat-ban')->first();
         $firstAds = Advertisement::where('category_id',$category->id)
             ->orderByDesc('id')->take(4)->get();
@@ -19,6 +21,6 @@ class MenuController extends Controller
         $secondAds = Advertisement::where('category_id',$category->id)
             ->whereNotIn('id',$firstAds->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
 
-        return view('index', compact('firstAds','secondAds','category'));
+        return view('index', compact('firstAds','secondAds','category')); */
     }
 }

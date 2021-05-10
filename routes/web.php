@@ -23,7 +23,9 @@ Route::get('/home', function () {
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 
-Route::get('/', 'App\Http\Controllers\MenuController@menu');
+//Route::get('/', 'App\Http\Controllers\MenuController@menu');
+
+Route::get('/', 'App\Http\Controllers\FrontAdsController@index');
 
 //ads
 Route::get('/ads/create', 'App\Http\Controllers\AdvertisementController@create')->name('ads.create')->middleware('auth');

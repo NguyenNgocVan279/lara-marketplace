@@ -24,4 +24,9 @@ class Category extends Model
     public function ads() {
         return $this->hasMany(Advertisement::class);
     }
+
+    //scope - Lesson 148(new)
+    public function scopeCategorySale($query) {
+        return $query->where('slug','nha-dat-ban')->first();
+    }
 }

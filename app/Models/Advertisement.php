@@ -44,4 +44,15 @@ class Advertisement extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    //scope
+    public function scopeFirstFourAdsInCarosel($query,$categoryId){
+        return $query->where('category_id', $categoryId)
+        ->orderByDesc('id')->take(4)->get();
+    }
+    public function scopeSecondFourAdsInCarosel($query,$categoryId){
+        $firstAds = $this->scopeFirstFourAdsInCarosel($query,$categoryId);
+        return $query->where('category_id',$categoryId)
+        ->whereNotIn('id',$firstAds->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
+    }
 }
