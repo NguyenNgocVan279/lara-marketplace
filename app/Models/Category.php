@@ -29,4 +29,8 @@ class Category extends Model
     public function scopeCategorySale($query) {
         return $query->where('slug','nha-dat-ban')->first();
     }
+
+    public function scopeCategoryRent($query) {
+        return $query->where('slug','nha-dat-cho-thue')->first();
+    }
 }

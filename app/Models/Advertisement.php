@@ -45,13 +45,24 @@ class Advertisement extends Model
         return $this->belongsTo(User::class);
     }
 
-    //scope
+    //scope method for nha dat ban
     public function scopeFirstFourAdsInCarosel($query,$categoryId){
         return $query->where('category_id', $categoryId)
         ->orderByDesc('id')->take(4)->get();
     }
     public function scopeSecondFourAdsInCarosel($query,$categoryId){
         $firstAds = $this->scopeFirstFourAdsInCarosel($query,$categoryId);
+        return $query->where('category_id',$categoryId)
+        ->whereNotIn('id',$firstAds->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
+    }
+
+    //scope method for nha dat cho thue
+    public function scopeFirstFourAdsInCaroselForRent($query,$categoryId){
+        return $query->where('category_id', $categoryId)
+        ->orderByDesc('id')->take(4)->get();
+    }
+    public function scopeSecondFourAdsInCaroselForRent($query,$categoryId){
+        $firstAds = $this->scopeFirstFourAdsInCaroselForRent($query,$categoryId);
         return $query->where('category_id',$categoryId)
         ->whereNotIn('id',$firstAds->pluck('id')->toArray())->orderByDesc('id')->take(4)->get();
     }
