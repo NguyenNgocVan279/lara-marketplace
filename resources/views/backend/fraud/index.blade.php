@@ -14,7 +14,7 @@
                                         <tr>
                                             <th>Mã tin đăng</th>
                                             <th>Tên tin đăng</th>
-                                            <th>Email</th>
+                                            <th>Người báo cáo</th>
                                             <th>Lý do</th>                                            
                                             <th>Nội dung</th>                                            
                                             <th>Xem</th>                                            
@@ -25,12 +25,12 @@
                                         @forelse($ads as $ad)
                                             <tr>
                                                 <td>{{ $ad->ad_id }}</td>
-                                                <td>{{ $ad->fraudad->name }}</td> <!--fraudad là một hàm trong model Fraud-->
+                                                <td></td>
                                                 <td>{{ $ad->email }}</td>
                                                 <td>{{ $ad->reason }}</td>
                                                 <td>{{ $ad->message }}</td>
                                                 <td>
-                                                    <a href="{{ route('product.view',[$ad->ad_id,$ad->fraudad->slug]) }}" target="_blank">
+                                                    <a href="#" target="_blank">
                                                         <button class="btn btn-primary">
                                                             Xem
                                                         </button>
@@ -41,14 +41,14 @@
                                                                                                                            
                                                 <td>
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$ad->ad_id}}">
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$ad->id}}">
                                                     Delete <i class="mdi mdi-delete"></i>
                                                     </button>
 
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal{{$ad->ad_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="exampleModal{{$ad->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
-                                                            <form action="{{ route('ads.destroy',$ad->ad_id) }}" method="post">@csrf
+                                                            <form action="{{ route('ads.destroy',$ad->id) }}" method="post">@csrf
                                                             @method('DELETE')
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">

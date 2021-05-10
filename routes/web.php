@@ -49,7 +49,7 @@ Route::group(['prefix'=>'auth','middleware'=>'admin'], function() {
     //admin listing
     Route::get('/allads','App\Http\Controllers\AdminListingController@index')->name('all.ads');
 
-    //listin reported ads
+    //listing reported ads
     Route::get('/reported-ads','App\Http\Controllers\FraudController@index')->name('all.reported.ads');
 });
 

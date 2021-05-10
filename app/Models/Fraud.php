@@ -12,6 +12,6 @@ class Fraud extends Model
     protected $fillable=['reason','message','email','ad_id'];
 
     public function fraudad() {
-        return $this->belongsTo(Advertisement::class,'ad_id','id');
+        return $this->belongsTo(Advertisement::class,'ad_id','id');        
     }
 }
