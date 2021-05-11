@@ -11,9 +11,10 @@
                 <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                       
+                        <th scope="col">#</th>                       
                         <th scope="col">Tiêu đề</th>
+                        <th scope="col">Loại bỏ</th>
+
                        
                       </tr>
                     </thead>
@@ -23,6 +24,12 @@
                             <th scope="row">{{ $key+1 }}</th>
                             <td>
                                <a href="{{route('product.view',[$ad->id,$ad->slug])}}" target="_blank">{{$ad->name}}</a> 
+                            </td>
+                            <td>
+                                <form action="{{route('ad.remove')}}" method="post">@csrf
+                                    <input type="hidden" name="adId" value="{{ $ad->id }}">
+                                    <button class="btn btn-danger" type="submit">Loại bỏ</button>
+                                </form>
                             </td>                                         
                         </tr>                        
                         @empty

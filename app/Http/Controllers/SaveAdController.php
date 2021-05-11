@@ -19,4 +19,9 @@ class SaveAdController extends Controller
         $ads = Advertisement::whereIn('id', $advertisementId)->get();
         return view('seller.saved-ads', compact('ads'));
     }
+
+    public function removeAd(Request $request) {
+        DB::table('advertisement_user')->where('user_id',auth()->id())->where('advertisement_id',$request->adId)->delete();        
+        return back()->with('message', 'Loại bỏ tin đăng thành công');
+    }
 }
