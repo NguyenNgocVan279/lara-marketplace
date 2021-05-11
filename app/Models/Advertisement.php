@@ -45,6 +45,11 @@ class Advertisement extends Model
         return $this->belongsTo(User::class);
     }
 
+    //Save ads relations
+    public function userads() {
+        return $this->belongsToMany(User::class);
+    }
+
     //scope method for nha dat ban
     public function scopeFirstFourAdsInCarosel($query,$categoryId){
         return $query->where('category_id', $categoryId)

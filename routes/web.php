@@ -75,5 +75,8 @@ Route::post('/start-conversation','App\Http\Controllers\SendMessageController@st
 Route::get('auth/facebook', 'App\Http\Controllers\SocialLoginController@facebookRedirect');
 Route::get('auth/facebook/callback', 'App\Http\Controllers\SocialLoginController@loginWithFacebook');
 
+//Save ad
+Route::post('/ad/save','App\Http\Controllers\SaveAdController@saveAd');
+
 //Report this ad
 route::post('/report-this-ad','App\Http\Controllers\FraudController@store')->name('report.ad');
