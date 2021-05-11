@@ -66,7 +66,7 @@ Route::get('/products/{id}/{slug}', 'App\Http\Controllers\FrontendController@sho
 
 // Message
 Route::post('/send/message','App\Http\Controllers\SendMessageController@store')->middleware('auth');
-Route::get('messages','App\Http\Controllers\SendMessageController@index')->middleware('auth');
+Route::get('messages','App\Http\Controllers\SendMessageController@index')->name('messages')->middleware('auth');
 Route::get('/users','App\Http\Controllers\SendMessageController@chatWithThisUser');
 Route::get('/message/user/{id}','App\Http\Controllers\SendMessageController@showMessages');
 Route::post('/start-conversation','App\Http\Controllers\SendMessageController@startConversation');
@@ -77,6 +77,7 @@ Route::get('auth/facebook/callback', 'App\Http\Controllers\SocialLoginController
 
 //Save ad
 Route::post('/ad/save','App\Http\Controllers\SaveAdController@saveAd');
+Route::get('/saved-ads','App\Http\Controllers\SaveAdController@getSavedAds')->name('saved.ads');
 
 //Report this ad
 route::post('/report-this-ad','App\Http\Controllers\FraudController@store')->name('report.ad');
