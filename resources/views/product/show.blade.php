@@ -69,6 +69,7 @@
                 <p>Giá: {{$advertisement->price}}đ, {{$advertisement->price_status}}</p>
                 <p>Đăng vào lúc: {{$advertisement->created_at->diffForHumans()}}</p>
                 <p>Địa chỉ tài sản: {{$advertisement->listing_location}}</p>
+                <save-ad></save-ad>
                 <hr>
                 @if(!$advertisement->user->avatar){
                     <img src="/img/man.jpg" width="120" alt="">

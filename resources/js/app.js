@@ -24,6 +24,7 @@ Vue.component('address-dropdown', require('./components/AddressDropDown.vue').de
 Vue.component('message', require('./components/Message.vue').default);
 Vue.component('conversation', require('./components/Conversation.vue').default);
 Vue.component('show-phone-number', require('./components/ShowPhoneNumber.vue').default);
+Vue.component('save-ad', require('./components/SaveAd.vue').default);
 
 //initialize vue
 const app = new Vue({
