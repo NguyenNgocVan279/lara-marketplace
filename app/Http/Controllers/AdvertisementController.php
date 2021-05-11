@@ -145,4 +145,9 @@ class AdvertisementController extends Controller
         $ad->delete();
         return back()->with('message', 'Xoá tin đăng thành công.');
     }
+
+    public function pendingAds() {
+        $ads = Advertisement::where('user_id',auth()->user()->id)->where('published',0)->get();
+        return view('ads.pending', compact('ads'));
+    }
 }

@@ -17,9 +17,9 @@
         <a href="{{ route('profile') }}" class="{{request()->is('profile')?'active':''}}">Thông tin cá nhân</a>
         <a href="{{route('ads.create')}}" class="{{request()->is('ads/create')?'active':''}}">Tạo tin đăng</a>
         <a href="{{route('ads.index')}}" class="{{request()->is('ads')?'active':''}}">Tin đã đăng</a>
-        <a href="#">Tin chờ duyệt</a>
+        <a href="{{ route('ads.pending') }}" class="{{request()->is('ads-pending')?'active':''}}">Tin chưa hoàn thiện</a>
         <a href="{{route('messages')}}" class="{{request()->is('messages')?'active':''}}">Hộp chat</a>
-        <a href="{{route('saved.ads')}}" class="{{request()->is('saved.ads')?'active':''}}">Tin đã lưu xem sau</a>        
+        <a href="{{route('saved.ads')}}" class="{{request()->is('saved-ads')?'active':''}}">Tin đã lưu xem sau</a>        
     </div>
 
 </div>

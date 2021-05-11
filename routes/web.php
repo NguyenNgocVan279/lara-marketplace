@@ -35,6 +35,8 @@ Route::get('/ads/{id}/edit', 'App\Http\Controllers\AdvertisementController@edit'
 Route::put('/ads/{id}/update', 'App\Http\Controllers\AdvertisementController@update')->name('ads.update')->middleware('auth');
 Route::delete('/ads/{id}/delete', 'App\Http\Controllers\AdvertisementController@destroy')->name('ads.destroy')->middleware('auth');
 
+Route::get('/ads-pending', 'App\Http\Controllers\AdvertisementController@pendingAds')->name('ads.pending')->middleware('auth');
+
 // User profile
 Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile')->middleware('auth');
 Route::post('/profile', 'App\Http\Controllers\ProfileController@updateProfile')->name('update.profile')->middleware('auth');
