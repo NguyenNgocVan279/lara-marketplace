@@ -69,15 +69,19 @@
                 <p>Giá: {{$advertisement->price}}đ, {{$advertisement->price_status}}</p>
                 <p>Đăng vào lúc: {{$advertisement->created_at->diffForHumans()}}</p>
                 <p>Địa chỉ tài sản: {{$advertisement->listing_location}}</p>
-                <save-ad
-                    :ad-id="{{$advertisement->id}}"
-                    :user-id="{{auth()->user()->id}}"
-                >
-                </save-ad>
+                @if(Auth::check())
+                    @if(!$advertisement->didUserSavedAd() && auth()->user()->id!=$advertisement->user_id)
+                        <save-ad
+                        :ad-id="{{$advertisement->id}}"
+                        :user-id="{{auth()->user()->id}}"
+                        >
+                        </save-ad>                    
+                    @endif               
+                @endif               
+               
                 <hr>
-                @if(!$advertisement->user->avatar){
-                    <img src="/img/man.jpg" width="120" alt="">
-                } 
+                @if(!$advertisement->user->avatar)
+                    <img src="/img/man.jpg" width="120" alt="">                
                 @else
                     <img src="{{ Storage::url($advertisement->user->avatar)}}" width="120">
                 @endif                

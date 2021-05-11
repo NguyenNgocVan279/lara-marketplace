@@ -10,6 +10,7 @@ use App\Models\District;
 use App\Models\Ward;
 use App\Models\User;
 use Cohensive\Embed\Facades\Embed;
+use Illuminate\Support\Facades\DB;
 
 class Advertisement extends Model
 {
@@ -48,6 +49,14 @@ class Advertisement extends Model
     //Save ads relations
     public function userads() {
         return $this->belongsToMany(User::class);
+    }
+
+    //Check if user already saved the ad
+    public function didUserSavedAd() {
+        return DB::table('advertisement_user')
+        ->where('user_id',auth()->user()->id)
+        ->where('advertisement_id',$this->id)
+        ->first();
     }
 
     //scope method for nha dat ban
