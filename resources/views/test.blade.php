@@ -2,6 +2,6 @@
 @section('content')
 
 
-<div class="container">body</div>
+<div class="container">body test</div>
 
 @endsection
